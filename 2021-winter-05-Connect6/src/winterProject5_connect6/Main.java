@@ -1161,8 +1161,7 @@ class alphago {
 			}
 		}
 	         
-	         
-	   //좌대각 시작점 ----------------------------------------------------------------------
+		//좌대각 시작점 ----------------------------------------------------------------------
 
 	      
 	      
@@ -1248,11 +1247,11 @@ class alphago {
 			             if (PlayBoard.playBoard[temp1][temp2] == Main.ComC) {
 			               myCount++;
 			                  if (myCount == 3) {
-			                    if ((temp1 + 3 <= 18 && temp2 + 3 <= 18) && PlayBoard.playBoard[temp1 + 1][temp2+ 1] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 + 2] == Main.UserC && PlayBoard.playBoard[temp1 + 3][temp2+ 3] == 0) {
+			                    if ((temp1 + 3 <= 18 && temp2 + 3 <= 18) && PlayBoard.playBoard[temp1 + 1][temp2+ 1] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 + 2] == Main.ComC && PlayBoard.playBoard[temp1 + 3][temp2+ 3] == 0) {
 									superWeight[temp1 + 1][temp2+ 1] += 40; add++;
 			                    	superWeight[temp1 + 3][temp2+ 3] += 40; add++;
 			                    	
-				                 }else if ((temp1 - 5 >= 0 && temp2 - 5 >= 0) && PlayBoard.playBoard[temp1 - 3][temp2- 3] == 0 && PlayBoard.playBoard[temp1 - 4][temp2- 4] == Main.UserC && PlayBoard.playBoard[temp1 - 5][temp2- 5] == 0) {
+				                 }else if ((temp1 - 5 >= 0 && temp2 - 5 >= 0) && PlayBoard.playBoard[temp1 - 3][temp2- 3] == 0 && PlayBoard.playBoard[temp1 - 4][temp2- 4] == Main.ComC && PlayBoard.playBoard[temp1 - 5][temp2- 5] == 0) {
 				                	superWeight[temp1 - 5][temp2 - 5] += 40; add++;
 			                    	superWeight[temp1 - 3][temp2 - 3] += 40; add++;
 				                 }
@@ -1279,11 +1278,11 @@ class alphago {
 			            if (PlayBoard.playBoard[temp1][temp2] == Main.ComC) {
 			               myCount++;
 			               if (myCount == 3) {
-			                    if ((temp1 + 3 <= 18 && temp2 + 3 <= 18) && PlayBoard.playBoard[temp1 + 1][temp2+ 1] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 + 2] == 0 && PlayBoard.playBoard[temp1 + 3][temp2+ 3] == Main.UserC) {
+			                    if ((temp1 + 3 <= 18 && temp2 + 3 <= 18) && PlayBoard.playBoard[temp1 + 1][temp2+ 1] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 + 2] == 0 && PlayBoard.playBoard[temp1 + 3][temp2+ 3] == Main.ComC) {
 									superWeight[temp1 + 1][temp2+ 1] += 40; add++;
 			                    	superWeight[temp1 + 2][temp2+ 2] += 40; add++;
 			                    	
-				                 }else if ((temp1 - 5 >= 0 && temp2 - 5 >= 0) && PlayBoard.playBoard[temp1 - 3][temp2- 3] == 0 && PlayBoard.playBoard[temp1 - 4][temp2- 4] == 0 && PlayBoard.playBoard[temp1 - 5][temp2- 5] == Main.UserC) {
+				                 }else if ((temp1 - 5 >= 0 && temp2 - 5 >= 0) && PlayBoard.playBoard[temp1 - 3][temp2- 3] == 0 && PlayBoard.playBoard[temp1 - 4][temp2- 4] == 0 && PlayBoard.playBoard[temp1 - 5][temp2- 5] == Main.ComC) {
 				                	superWeight[temp1 - 4][temp2 - 4] += 40; add++;
 			                    	superWeight[temp1 - 3][temp2 - 3] += 40; add++;
 				                 }
@@ -1311,47 +1310,47 @@ class alphago {
 		                            try {
 		                               if (myCount == 2) {
 		                            	   //101011(up)
-		                                   if ((temp1 - 5 >= 0 && temp2 - 5 >= 0 )&& PlayBoard.playBoard[temp1 - 4][temp2 - 4] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 - 3][temp2 - 3] == Main.UserC && PlayBoard.playBoard[temp1 - 5][temp2 - 5] == Main.UserC) {
+		                                   if ((temp1 - 5 >= 0 && temp2 - 5 >= 0 )&& PlayBoard.playBoard[temp1 - 4][temp2 - 4] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 - 3][temp2 - 3] == Main.ComC && PlayBoard.playBoard[temp1 - 5][temp2 - 5] == Main.ComC) {
 		                                          superWeight[temp1 - 4][temp2 - 4] += 40; add++;
 		                                          superWeight[temp1 - 2][temp2 - 2] += 40; add++;
 		                                    }
 		                                   //110011(up)
-		                                    else if ((temp1 - 5 >= 0 && temp2 - 5 >= 0 )&& PlayBoard.playBoard[temp1 - 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 - 3][temp2 - 3] == 0 && PlayBoard.playBoard[temp1 - 4][temp2 - 4] == Main.UserC && PlayBoard.playBoard[temp1 - 5][temp2 - 5] == Main.UserC) {
+		                                    else if ((temp1 - 5 >= 0 && temp2 - 5 >= 0 )&& PlayBoard.playBoard[temp1 - 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 - 3][temp2 - 3] == 0 && PlayBoard.playBoard[temp1 - 4][temp2 - 4] == Main.ComC && PlayBoard.playBoard[temp1 - 5][temp2 - 5] == Main.ComC) {
 		                                          superWeight[temp1 - 2][temp2 - 2] += 40; add++;
 		                                          superWeight[temp1 - 3][temp2 - 3] += 40; add++;
 		                                    }
 		                                   //011011(up)
-		                                    else if ((temp1 - 5 >= 0 && temp2 - 5 >= 0 )&& PlayBoard.playBoard[temp1 - 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 - 5][temp2 - 5] == 0 && PlayBoard.playBoard[temp1 - 4][temp2 - 4] == Main.UserC && PlayBoard.playBoard[temp1 - 3][temp2 - 3] == Main.UserC) {
+		                                    else if ((temp1 - 5 >= 0 && temp2 - 5 >= 0 )&& PlayBoard.playBoard[temp1 - 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 - 5][temp2 - 5] == 0 && PlayBoard.playBoard[temp1 - 4][temp2 - 4] == Main.ComC && PlayBoard.playBoard[temp1 - 3][temp2 - 3] == Main.ComC) {
 		                                          superWeight[temp1 - 2][temp2 - 2] += 40; add++;
 		                                          superWeight[temp1 - 5][temp2 - 5] += 40; add++;
 		                                    }
 		                                   //110110(mid)
-		                                    else if ((temp1 - 4 >= 0 && temp2 - 4 >= 0 && temp1 + 1 <= 18 && temp2 + 1 <= 18) && PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 - 3][temp2 - 3] == Main.UserC && PlayBoard.playBoard[temp1 - 4][temp2 - 4] == Main.UserC) {
+		                                    else if ((temp1 - 4 >= 0 && temp2 - 4 >= 0 && temp1 + 1 <= 18 && temp2 + 1 <= 18) && PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 - 3][temp2 - 3] == Main.ComC && PlayBoard.playBoard[temp1 - 4][temp2 - 4] == Main.ComC) {
 		                                       superWeight[temp1 + 1][temp2 + 1] += 40; add++;
 		                                       superWeight[temp1 - 2][temp2 - 2] += 40; add++;
 		                                    }
 		                                   //011011(mid)
-		                                    else if ((temp1 - 2 >= 0 && temp2 - 2 >= 0 && temp1 + 3 <= 18 && temp2 + 3 <= 18) && PlayBoard.playBoard[temp1 - 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 + 2] == Main.UserC && PlayBoard.playBoard[temp1 + 3][temp2 + 3] == Main.UserC) {
+		                                    else if ((temp1 - 2 >= 0 && temp2 - 2 >= 0 && temp1 + 3 <= 18 && temp2 + 3 <= 18) && PlayBoard.playBoard[temp1 - 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 + 2] == Main.ComC && PlayBoard.playBoard[temp1 + 3][temp2 + 3] == Main.ComC) {
 		                                          superWeight[temp1 - 2][temp2 - 2] += 40; add++;
 		                                          superWeight[temp1 + 1][temp2 + 1] += 40; add++;
 		                                    }
 		                                   //110110(mid)
-		                                    else if ((temp1 - 4 >= 0 && temp2 - 4 >= 0 && temp1 + 1 <= 18 && temp2 + 1 <= 18) && PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 - 3][temp2 - 3] == Main.UserC && PlayBoard.playBoard[temp1 - 4][temp2 - 4] == Main.UserC) {
+		                                    else if ((temp1 - 4 >= 0 && temp2 - 4 >= 0 && temp1 + 1 <= 18 && temp2 + 1 <= 18) && PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 - 3][temp2 - 3] == Main.ComC && PlayBoard.playBoard[temp1 - 4][temp2 - 4] == Main.ComC) {
 		                                       superWeight[temp1 + 1][temp2 + 1] += 40; add++;
 		                                       superWeight[temp1 - 2][temp2 - 2] += 40; add++;
 		                                   }
 		                                   //110110(down)
-			                                   else if ((temp1- 4 <= 18 && temp2 - 4 <= 18) && PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 + 4][temp2 + 4] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 + 2] == Main.UserC && PlayBoard.playBoard[temp1 + 3][temp2 + 3] == Main.UserC) {
+			                                   else if ((temp1- 4 <= 18 && temp2 - 4 <= 18) && PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 + 4][temp2 + 4] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 + 2] == Main.ComC && PlayBoard.playBoard[temp1 + 3][temp2 + 3] == Main.ComC) {
 			                                       superWeight[temp1 + 1][temp2 + 1] += 40; add++;
 			                                       superWeight[temp1 + 4][temp2 + 4] += 40; add++;
 			                               }
 		                                   //110011(down)
-		                                    else if ((temp1- 4 <= 18 && temp2 - 4 <= 18) && PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 + 2] == 0 && PlayBoard.playBoard[temp1 + 3][temp2 + 3] == Main.UserC && PlayBoard.playBoard[temp1 + 4][temp2 + 4] == Main.UserC) {
+		                                    else if ((temp1- 4 <= 18 && temp2 - 4 <= 18) && PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 + 2] == 0 && PlayBoard.playBoard[temp1 + 3][temp2 + 3] == Main.ComC && PlayBoard.playBoard[temp1 + 4][temp2 + 4] == Main.ComC) {
 		                                          superWeight[temp1 + 1][temp2 + 1] += 40; add++;
 		                                          superWeight[temp1 + 2][temp2 + 2] += 40; add++;
 		                                   }
 		                                   //110101(down)
-		                                    else if ((temp1- 4 <= 18 && temp2 - 4 <= 18) && PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 + 4][temp2 + 4] == 0 && PlayBoard.playBoard[temp1 + 3][temp2 + 3] == Main.UserC && PlayBoard.playBoard[temp1 + 2][temp2 + 2] == Main.UserC) {
+		                                    else if ((temp1- 4 <= 18 && temp2 - 4 <= 18) && PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 + 4][temp2 + 4] == 0 && PlayBoard.playBoard[temp1 + 3][temp2 + 3] == Main.ComC && PlayBoard.playBoard[temp1 + 2][temp2 + 2] == Main.ComC) {
 		                                          superWeight[temp1 + 1][temp2 + 1] += 40; add++;
 		                                          superWeight[temp1 + 4][temp2 + 4] += 40; add++;
 		                                   }
@@ -1369,8 +1368,8 @@ class alphago {
 		      
 		      //우대각 시작점 -----------------------------------------------------------------------------------------
 		       
-      if(add >= 2) return;
-      // 5 오른쪽위에서 왼쪽아래 (우대각/) 공격 
+    if(add >= 2) return;
+    // 5 오른쪽위에서 왼쪽아래 (우대각/) 공격 
 	      for (int j = 0; j < 19; j++) {
 	         myCount = 0;
 	         for (int i = 0; i < 19; i++) {
@@ -1465,11 +1464,11 @@ class alphago {
 			             if (PlayBoard.playBoard[temp1][temp2] == Main.ComC) {
 			               myCount++;
 			                  if (myCount == 3) {
-			                    if ((temp1 - 3 >= 0 && temp2 + 3 <= 18) && PlayBoard.playBoard[temp1 - 1][temp2+ 1] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 + 2] == Main.UserC && PlayBoard.playBoard[temp1 - 3][temp2+ 3] == 0) {
+			                    if ((temp1 - 3 >= 0 && temp2 + 3 <= 18) && PlayBoard.playBoard[temp1 - 1][temp2+ 1] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 + 2] == Main.ComC && PlayBoard.playBoard[temp1 - 3][temp2+ 3] == 0) {
 			                    	superWeight[temp1 - 1][temp2+ 1] += 40; add++;
 			                    	superWeight[temp1 - 3][temp2+ 3] += 40; add++;
 			                    	
-				                 }else if ((temp1 + 5 <= 18 && temp2 - 5 >= 0) && PlayBoard.playBoard[temp1 + 3][temp2- 3] == 0 && PlayBoard.playBoard[temp1 + 4][temp2- 4] == Main.UserC && PlayBoard.playBoard[temp1 + 5][temp2- 5] == 0) {
+				                 }else if ((temp1 + 5 <= 18 && temp2 - 5 >= 0) && PlayBoard.playBoard[temp1 + 3][temp2- 3] == 0 && PlayBoard.playBoard[temp1 + 4][temp2- 4] == Main.ComC && PlayBoard.playBoard[temp1 + 5][temp2- 5] == 0) {
 				                	superWeight[temp1 + 5][temp2 - 5] += 40; add++;
 			                    	superWeight[temp1 + 3][temp2 - 3] += 40; add++;
 				                 }
@@ -1496,11 +1495,11 @@ class alphago {
 			            if (PlayBoard.playBoard[temp1][temp2] == Main.ComC) {
 			               myCount++;
 			               if (myCount == 3) {
-			                    if ((temp1 - 3 >= 0 && temp2 + 3 <= 18) && PlayBoard.playBoard[temp1 - 1][temp2+ 1] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 + 2] == 0 && PlayBoard.playBoard[temp1 - 3][temp2+ 3] == Main.UserC) {
+			                    if ((temp1 - 3 >= 0 && temp2 + 3 <= 18) && PlayBoard.playBoard[temp1 - 1][temp2+ 1] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 + 2] == 0 && PlayBoard.playBoard[temp1 - 3][temp2+ 3] == Main.ComC) {
 									superWeight[temp1 - 1][temp2+ 1] += 40; add++;
 			                    	superWeight[temp1 - 2][temp2+ 2] += 40; add++;
 			                    	
-				                 }else if ((temp1 + 5 <= 18 && temp2 - 5 >= 0) && PlayBoard.playBoard[temp1 + 3][temp2- 3] == 0 && PlayBoard.playBoard[temp1 + 4][temp2- 4] == 0 && PlayBoard.playBoard[temp1 + 5][temp2- 5] == Main.UserC) {
+				                 }else if ((temp1 + 5 <= 18 && temp2 - 5 >= 0) && PlayBoard.playBoard[temp1 + 3][temp2- 3] == 0 && PlayBoard.playBoard[temp1 + 4][temp2- 4] == 0 && PlayBoard.playBoard[temp1 + 5][temp2- 5] == Main.ComC) {
 				                	superWeight[temp1 + 4][temp2 - 4] += 40; add++;
 			                    	superWeight[temp1 + 3][temp2 - 3] += 40; add++;
 				                 }
@@ -1531,47 +1530,47 @@ class alphago {
 		                            try {
 		                               if (myCount == 2) {
 		                                   //011011(up)
-		                                   if ((temp1 + 5 <= 18 && temp1 - 5 >= 0) && PlayBoard.playBoard[temp1 + 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 + 5][temp2 - 5] == 0 && PlayBoard.playBoard[temp1 + 3][temp2 - 3] == Main.UserC && PlayBoard.playBoard[temp1 + 4][temp2 - 4] == Main.UserC) {
+		                                   if ((temp1 + 5 <= 18 && temp1 - 5 >= 0) && PlayBoard.playBoard[temp1 + 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 + 5][temp2 - 5] == 0 && PlayBoard.playBoard[temp1 + 3][temp2 - 3] == Main.ComC && PlayBoard.playBoard[temp1 + 4][temp2 - 4] == Main.ComC) {
 		                                       superWeight[temp1 + 2][temp2 - 2] += 40; add++;
 		                                       superWeight[temp1 + 5][temp2 - 5] += 40; add++;
 		                                    }
 		                                   //101011(up)
-		                                    else if ((temp1 + 5 <= 18 && temp1 - 5 >= 0) && PlayBoard.playBoard[temp1 + 4][temp2 - 4] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 + 3][temp2 - 3] == Main.UserC && PlayBoard.playBoard[temp1 + 5][temp2 - 5] == Main.UserC) {
+		                                    else if ((temp1 + 5 <= 18 && temp1 - 5 >= 0) && PlayBoard.playBoard[temp1 + 4][temp2 - 4] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 + 3][temp2 - 3] == Main.ComC && PlayBoard.playBoard[temp1 + 5][temp2 - 5] == Main.ComC) {
 		                                          superWeight[temp1 + 2][temp2 - 2] += 40; add++;
 		                                          superWeight[temp1 + 4][temp2 - 4] += 40; add++;
 		                                    }
 		                                   //110011(up)
-		                                    else if ((temp1 + 5 <= 18 && temp1 - 5 >= 0) && PlayBoard.playBoard[temp1 + 3][temp2 - 3] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 + 4][temp2 - 4] == Main.UserC && PlayBoard.playBoard[temp1 + 5][temp2 - 5] == Main.UserC) {
+		                                    else if ((temp1 + 5 <= 18 && temp1 - 5 >= 0) && PlayBoard.playBoard[temp1 + 3][temp2 - 3] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 + 4][temp2 - 4] == Main.ComC && PlayBoard.playBoard[temp1 + 5][temp2 - 5] == Main.ComC) {
 		                                          superWeight[temp1 + 2][temp2 - 2] += 40; add++;
 		                                          superWeight[temp1 + 3][temp2 - 3] += 40; add++;
 		                                    }
 		                                   //101101(mid)
-		                                    else if ((temp1 - 2 >= 0 && temp2 + 2 <= 18) && (temp1 + 3 <= 18 && temp2 - 3 >= 0) && PlayBoard.playBoard[temp1 + 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 + 2] == Main.UserC && PlayBoard.playBoard[temp1 + 3][temp2 - 3] == Main.UserC) {
+		                                    else if ((temp1 - 2 >= 0 && temp2 + 2 <= 18) && (temp1 + 3 <= 18 && temp2 - 3 >= 0) && PlayBoard.playBoard[temp1 + 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 + 2] == Main.ComC && PlayBoard.playBoard[temp1 + 3][temp2 - 3] == Main.ComC) {
 		                                          superWeight[temp1 + 2][temp2 - 2] += 40; add++;
 		                                          superWeight[temp1 - 1][temp2 + 1] += 40; add++;
 		                                    }
 		                                   //011011(mid)
-			                            	   else if ((temp1 - 3 >= 0 && temp2 + 3 <= 18) && (temp1 + 2 <= 18 && temp2 - 2 >= 0) && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 + 2] == Main.UserC && PlayBoard.playBoard[temp1 - 3][temp2 + 3] == Main.UserC) {
+			                            	   else if ((temp1 - 3 >= 0 && temp2 + 3 <= 18) && (temp1 + 2 <= 18 && temp2 - 2 >= 0) && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 + 2] == Main.ComC && PlayBoard.playBoard[temp1 - 3][temp2 + 3] == Main.ComC) {
 			                                       superWeight[temp1 - 1][temp2 + 1] += 40; add++;
 			                                       superWeight[temp1 + 2][temp2 - 2] += 40; add++;
 			                               } 
 		                                   //110110(mid)
-			                            	   else if ((temp1 - 4 >= 0 && temp2 + 4 <= 18) && (temp1 + 1 <= 18 && temp2 - 1 >= 0) && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 + 3][temp2 - 3] == Main.UserC && PlayBoard.playBoard[temp1 + 4][temp2 - 4] == Main.UserC) {
+			                            	   else if ((temp1 - 4 >= 0 && temp2 + 4 <= 18) && (temp1 + 1 <= 18 && temp2 - 1 >= 0) && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 + 3][temp2 - 3] == Main.ComC && PlayBoard.playBoard[temp1 + 4][temp2 - 4] == Main.ComC) {
 			                                       superWeight[temp1 - 1][temp2 + 1] += 40; add++;
 			                                       superWeight[temp1 + 2][temp2 - 2] += 40; add++;
 			                               }
 		                                   //110011(down)
-		                                    else if ((temp1 - 4 >= 0 && temp1 +4 <= 18) && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 + 2] == 0 && PlayBoard.playBoard[temp1 - 3][temp2 + 3] == Main.UserC && PlayBoard.playBoard[temp1 - 4][temp2 + 4] == Main.UserC) {
+		                                    else if ((temp1 - 4 >= 0 && temp1 +4 <= 18) && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 + 2] == 0 && PlayBoard.playBoard[temp1 - 3][temp2 + 3] == Main.ComC && PlayBoard.playBoard[temp1 - 4][temp2 + 4] == Main.ComC) {
 		                                          superWeight[temp1 - 1][temp2 + 1] += 40; add++;
 		                                          superWeight[temp1 - 2][temp2 + 2] += 40; add++;
 		                                    }
 		                                   //110101(down)
-		                                    else if ((temp1 - 4 >= 0 && temp1 +4 <= 18) && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 - 3][temp2 + 3] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 + 2] == Main.UserC && PlayBoard.playBoard[temp1 - 4][temp2 + 4] == Main.UserC) {
+		                                    else if ((temp1 - 4 >= 0 && temp1 +4 <= 18) && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 - 3][temp2 + 3] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 + 2] == Main.ComC && PlayBoard.playBoard[temp1 - 4][temp2 + 4] == Main.ComC) {
 		                                          superWeight[temp1 - 1][temp2 + 1] += 40; add++;
 		                                          superWeight[temp1 - 3][temp2 + 3] += 40; add++;
 		                                    }
 		                                   //110110(down)
-		                                    else if ((temp1 - 4 >= 0 && temp1 +4 <= 18) && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 - 4][temp2 + 4] == 0 && PlayBoard.playBoard[temp1 - 3][temp2 + 3] == Main.UserC && PlayBoard.playBoard[temp1 - 2][temp2 + 2] == Main.UserC) {
+		                                    else if ((temp1 - 4 >= 0 && temp1 +4 <= 18) && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 - 4][temp2 + 4] == 0 && PlayBoard.playBoard[temp1 - 3][temp2 + 3] == Main.ComC && PlayBoard.playBoard[temp1 - 2][temp2 + 2] == Main.ComC) {
 		                                          superWeight[temp1 - 1][temp2 + 1] += 40; add++;
 		                                          superWeight[temp1 - 4][temp2 + 4] += 40; add++;
 		                                    }
@@ -1589,6 +1588,7 @@ class alphago {
 		    //작업중입니다 ==========================================
 				
 		    //====================================================================
+	   
 		      
 		    testTest(myCount, add);
 
@@ -2508,925 +2508,926 @@ class alphago {
 	//// 한방오리백숙 -------------------------------------------------------------------------------------
 
 
-	  //세로 시작점 ----------------------------------------------------------------------
-	     
-	  if (add >= 2)
-			return;
-		// 공격/세로/5-1
-		for (int i = 0; i < 19; i++) {
-			myCount = 0;
-			for (int j = 0; j < 19; j++) {
-				try {
-					if (PlayBoard.playBoard[i][j] == Main.ComC) {
-						myCount++;
-						if (myCount == 5) {
-							// 양끝 중 아무 빈곳에 가중치 왕창 이벤트
-							/*
-							 * if (j - 5 < 0 && PlayBoard.playBoard[i][j + 1] == 0) { // |[11111]0 right
-							 * superWeight[i][j + 1] += 40; add++; } else if (j + 1 > 18 &&
-							 * PlayBoard.playBoard[i][j - 5] == 0) { // 0[11111]| left superWeight[i][j - 5]
-							 * += 40; add++; } else
-							 */ if (j - 5 > 0 && PlayBoard.playBoard[i][j - 5] == 0) { // 0[11111] left //made a change
-								superWeight[i][j - 5] += 80;
-								add++;
-							} else if (j + 1 < 19 && PlayBoard.playBoard[i][j + 1] == 0) { // *[11111]0 right //also
-																							// made a change
-								superWeight[i][j + 1] += 80;
-								add++;
-							}
-
-						}
-					} else
-						myCount = 0;
-				} catch (ArrayIndexOutOfBoundsException e) {
-				}
-			}
-		}
-
-		if (add >= 2)
-			return;
-		// 공격/세로/1-4-1/2-4
-		for (int i = 0; i < 19; i++) {
-			myCount = 0;
-			for (int j = 0; j < 19; j++) {
-				try {
-					if (PlayBoard.playBoard[i][j] == Main.ComC) {
-						myCount++;
-
-						if (myCount == 4) {
-
-							/*
-							 * if (j - 4 < 0 && PlayBoard.playBoard[i][j + 1] == 0 &&
-							 * PlayBoard.playBoard[i][j + 2] == 0) { // |[1111]00 right superWeight[i][j +
-							 * 1] += 40; superWeight[i][j + 2] += 40; add += 2; } else if (j + 1 > 18 &&
-							 * PlayBoard.playBoard[i][j - 4] == 0 && PlayBoard.playBoard[i][j - 5] == 0) {
-							 * // 00[1111]| left superWeight[i][j - 4] += 40; superWeight[i][j - 5] += 40;
-							 * add += 2; } else
-							 */ if (j - 4 > 0 && j + 1 < 19 && PlayBoard.playBoard[i][j - 4] == 0
-									&& PlayBoard.playBoard[i][j + 1] == 0) { // 0[1111]0 mid
-								superWeight[i][j - 4] += 80;
-								superWeight[i][j + 1] += 80;
-								add += 2;
-							}
-
-							else if (j - 5 < 0 && PlayBoard.playBoard[i][j - 4] == 0
-									&& PlayBoard.playBoard[i][j - 5] == 0) { // 00[1111] left ??????????????
-								superWeight[i][j - 4] += 80;
-								superWeight[i][j - 5] += 80;
-								add += 2;
-							} else if (j + 2 < 19 && PlayBoard.playBoard[i][j + 1] == 0
-									&& PlayBoard.playBoard[i][j + 2] == 0) { // [1111]00 right
-								superWeight[i][j + 2] += 80;
-								superWeight[i][j + 1] += 80;
-								add += 2;
-							}
-
-						}
-					} else
-						myCount = 0;
-				} catch (ArrayIndexOutOfBoundsException e) {
-				}
-			}
-		}
-
-		if (add >= 2)
-			return;
-		// 공격/세로/3-1-1-1/1-3-1-1
-		for (int i = 0; i < 19; i++) {
-			myCount = 0;
-			for (int j = 0; j < 19; j++) {
-				try {
-					if (PlayBoard.playBoard[i][j] == Main.ComC) {
-						myCount++;
-						if (myCount == 3) { // 세번연속일때
-
-							if (j + 3 < 19 && PlayBoard.playBoard[i][j + 1] == 0
-									&& PlayBoard.playBoard[i][j + 2] == Main.ComC
-									&& PlayBoard.playBoard[i][j + 3] == 0) { // [111]010 right
-
-								superWeight[i][j + 1] += 40;
-								superWeight[i][j + 3] += 40;
-								add += 2;
-							}
-
-							else if (j - 5 > 0
-									&& (PlayBoard.playBoard[i][j - 3] == 0 && PlayBoard.playBoard[i][j - 4] == Main.ComC
-											&& PlayBoard.playBoard[i][j - 5] == 0)) { // 010[111] left
-
-								superWeight[i][j - 3] += 40;
-								superWeight[i][j - 5] += 40;
-								add += 2;
-							}
-
-							else if (j - 3 > 0 && j + 2 < 19 && PlayBoard.playBoard[i][j - 3] == 0
-									&& PlayBoard.playBoard[i][j + 1] == 0
-									&& PlayBoard.playBoard[i][j + 2] == Main.ComC) { // 0[111]01 mid
-								superWeight[i][j - 3] += 40;
-								superWeight[i][j + 2] += 40;
-								add += 2;
-							} else if (j - 4 > 0 && j + 1 < 19 && PlayBoard.playBoard[i][j - 3] == 0
-									&& PlayBoard.playBoard[i][j - 4] == Main.ComC
-									&& PlayBoard.playBoard[i][j + 1] == 0) { // 10[111]0 mid
-								superWeight[i][j - 3] += 40;
-								superWeight[i][j + 1] += 40;
-								add += 2;
-							}
-						} else
-							myCount = 0;
-					}
-				} catch (ArrayIndexOutOfBoundsException e) {
-				}
-			}
-		}
-
-		if (add >= 2)
-			return;
-		// 공격/세로/3-2-1
-		for (int i = 0; i < 19; i++) {
-			myCount = 0;
-			for (int j = 0; j < 19; j++) {
-				try {
-					if (PlayBoard.playBoard[i][j] == Main.ComC) {
-						myCount++;
-						if (myCount == 3) { // 세번연속일때
-
-							if (j + 3 < 19 && (PlayBoard.playBoard[i][j + 1] == 0 && PlayBoard.playBoard[i][j + 2] == 0
-									&& PlayBoard.playBoard[i][j + 3] == Main.ComC)) { // [111]001 right
-
-								superWeight[i][j + 1] += 40;
-								superWeight[i][j + 2] += 40;
-								add += 2;
-							}
-
-							else if (j - 5 > 0
-									&& (PlayBoard.playBoard[i][j - 3] == 0 && PlayBoard.playBoard[i][j - 4] == 0
-											&& PlayBoard.playBoard[i][j - 5] == Main.ComC)) { // 100[111] left
-
-								superWeight[i][j - 3] += 40;
-								superWeight[i][j - 4] += 40;
-								add += 2;
+		  //세로 시작점 ----------------------------------------------------------------------
+		     
+		  if (add >= 2)
+				return;
+			// 공격/세로/5-1
+			for (int i = 0; i < 19; i++) {
+				myCount = 0;
+				for (int j = 0; j < 19; j++) {
+					try {
+						if (PlayBoard.playBoard[i][j] == Main.UserC) {
+							myCount++;
+							if (myCount == 5) {
+								// 양끝 중 아무 빈곳에 가중치 왕창 이벤트
+								/*
+								 * if (j - 5 < 0 && PlayBoard.playBoard[i][j + 1] == 0) { // |[11111]0 right
+								 * superWeight[i][j + 1] += 40; add++; } else if (j + 1 > 18 &&
+								 * PlayBoard.playBoard[i][j - 5] == 0) { // 0[11111]| left superWeight[i][j - 5]
+								 * += 40; add++; } else
+								 */ if (j - 5 > 0 && PlayBoard.playBoard[i][j - 5] == 0) { // 0[11111] left //made a change
+									superWeight[i][j - 5] += 80;
+									add++;
+								} else if (j + 1 < 19 && PlayBoard.playBoard[i][j + 1] == 0) { // *[11111]0 right //also
+																								// made a change
+									superWeight[i][j + 1] += 80;
+									add++;
+								}
 
 							}
 						} else
 							myCount = 0;
+					} catch (ArrayIndexOutOfBoundsException e) {
 					}
-				} catch (ArrayIndexOutOfBoundsException e) {
 				}
 			}
-		}
 
-		if (add >= 2)
-			return;
-		// 공격/세로/2-2-2/1-2-1-2/1-1-1-1-2/1-1-2-1-1
-		for (int i = 0; i < 19; i++) {
-			myCount = 0;
-			for (int j = 0; j < 19; j++) {
-				// try { WHY????????????
-				if (PlayBoard.playBoard[i][j] == Main.ComC) {
-					myCount++;
-					if (myCount == 2) {
+			if (add >= 2)
+				return;
+			// 공격/세로/1-4-1/2-4
+			for (int i = 0; i < 19; i++) {
+				myCount = 0;
+				for (int j = 0; j < 19; j++) {
+					try {
+						if (PlayBoard.playBoard[i][j] == Main.UserC) {
+							myCount++;
 
-						try {
+							if (myCount == 4) {
 
-							if (j + 4 < 19 && PlayBoard.playBoard[i][j + 1] == 0 && PlayBoard.playBoard[i][j + 2] == 0
-									&& PlayBoard.playBoard[i][j + 3] == Main.ComC
-									&& PlayBoard.playBoard[i][j + 4] == Main.ComC) { // [11]0011 right
-								superWeight[i][j + 1] += 40;
-								superWeight[i][j + 2] += 40;
-								add += 2;
-							} /*
-								 * else if (j - 5 > 0 && PlayBoard.playBoard[i][j - 2] == 0 &&
-								 * PlayBoard.playBoard[i][j - 3] == 0 && PlayBoard.playBoard[i][j - 4] ==
-								 * Main.ComC && PlayBoard.playBoard[i][j - 5] == Main.ComC) { // 1100[11] left
-								 * superWeight[i][j - 2] += 40; superWeight[i][j - 3] += 40; add += 2; }
-								 */ else if (j - 2 > 0 && j + 3 > 19 && PlayBoard.playBoard[i][j - 2] == 0
-									&& PlayBoard.playBoard[i][j + 1] == 0 && PlayBoard.playBoard[i][j + 2] == Main.ComC
-									&& PlayBoard.playBoard[i][j + 3] == Main.ComC) { // 0[11]011 mid
-								superWeight[i][j - 2] += 40;
-								superWeight[i][j + 1] += 40;
-								add += 2;
-							} /*
-								 * else if (j - 5 > 0 && PlayBoard.playBoard[i][j - 2] == 0 &&
-								 * PlayBoard.playBoard[i][j - 5] == 0 && PlayBoard.playBoard[i][j - 3] ==
-								 * Main.ComC && PlayBoard.playBoard[i][j - 4] == Main.ComC) { // 0110[11] left
-								 * superWeight[i][j - 2] += 40; superWeight[i][j - 5] += 40; add += 2; }
-								 */ else if (j - 5 > 0 && PlayBoard.playBoard[i][j - 2] == 0
-									&& PlayBoard.playBoard[i][j - 4] == 0 && PlayBoard.playBoard[i][j - 3] == Main.ComC
-									&& PlayBoard.playBoard[i][j - 5] == Main.ComC) { // 1010[11] left
-								superWeight[i][j - 2] += 40;
-								superWeight[i][j - 4] += 40;
-								add += 2;
-							} else if (j - 3 > 0 && j + 2 < 19 && PlayBoard.playBoard[i][j - 2] == 0
-									&& PlayBoard.playBoard[i][j + 1] == 0 && PlayBoard.playBoard[i][j - 3] == Main.ComC
-									&& PlayBoard.playBoard[i][j + 2] == Main.ComC) { // 10[11]01 mid
-								superWeight[i][j - 2] += 40;
-								superWeight[i][j + 1] += 40;
-								add += 2;
-							} else if (j + 4 < 19 && PlayBoard.playBoard[i][j + 1] == 0
-									&& PlayBoard.playBoard[i][j + 3] == 0 && PlayBoard.playBoard[i][j + 2] == Main.ComC
-									&& PlayBoard.playBoard[i][j + 4] == Main.ComC) { // [11]0101 right
-								superWeight[i][j + 3] += 40;
-								superWeight[i][j + 1] += 40;
-								add += 2;
-							} else if (j + 4 < 19 && PlayBoard.playBoard[i][j + 1] == 0
-									&& PlayBoard.playBoard[i][j + 4] == 0 && PlayBoard.playBoard[i][j + 2] == Main.ComC
-									&& PlayBoard.playBoard[i][j + 3] == Main.ComC) { // [11]0110 right
-								superWeight[i][j + 4] += 40;
-								superWeight[i][j + 1] += 40;
-								add += 2;
-							} /*
-								 * else if (j - 4 > 0 && j + 1 < 19 && PlayBoard.playBoard[i][j + 1] == 0 &&
-								 * PlayBoard.playBoard[i][j - 2] == 0 && PlayBoard.playBoard[i][j - 3] ==
-								 * Main.ComC && PlayBoard.playBoard[i][j - 4] == Main.ComC) { // 110[11]0 mid
-								 * superWeight[i][j - 2] += 40; superWeight[i][j + 1] += 40; add += 2; }
-								 */
-						} catch (ArrayIndexOutOfBoundsException e) {}
+								/*
+								 * if (j - 4 < 0 && PlayBoard.playBoard[i][j + 1] == 0 &&
+								 * PlayBoard.playBoard[i][j + 2] == 0) { // |[1111]00 right superWeight[i][j +
+								 * 1] += 40; superWeight[i][j + 2] += 40; add += 2; } else if (j + 1 > 18 &&
+								 * PlayBoard.playBoard[i][j - 4] == 0 && PlayBoard.playBoard[i][j - 5] == 0) {
+								 * // 00[1111]| left superWeight[i][j - 4] += 40; superWeight[i][j - 5] += 40;
+								 * add += 2; } else
+								 */ if (j - 4 > 0 && j + 1 < 19 && PlayBoard.playBoard[i][j - 4] == 0
+										&& PlayBoard.playBoard[i][j + 1] == 0) { // 0[1111]0 mid
+									superWeight[i][j - 4] += 80;
+									superWeight[i][j + 1] += 80;
+									add += 2;
+								}
+
+								else if (j - 5 < 0 && PlayBoard.playBoard[i][j - 4] == 0
+										&& PlayBoard.playBoard[i][j - 5] == 0) { // 00[1111] left ??????????????
+									superWeight[i][j - 4] += 80;
+									superWeight[i][j - 5] += 80;
+									add += 2;
+								} else if (j + 2 < 19 && PlayBoard.playBoard[i][j + 1] == 0
+										&& PlayBoard.playBoard[i][j + 2] == 0) { // [1111]00 right
+									superWeight[i][j + 2] += 80;
+									superWeight[i][j + 1] += 80;
+									add += 2;
+								}
+
+							}
+						} else
+							myCount = 0;
+					} catch (ArrayIndexOutOfBoundsException e) {
 					}
-				} else myCount = 0;
-				// }catch (ArrayIndexOutOfBoundsException e) {}
-			}
-		}
-
-	     
-
-		//가로 시작점 -------------------------------------------------------------------------------------------------
-
-		if (add >= 2)
-			return;
-		// 공격/가로/5-1
-		for (int j = 0; j < 19; j++) {
-			myCount = 0;
-			for (int i = 0; i < 19; i++) {
-				try {
-					if (PlayBoard.playBoard[i][j] == Main.ComC) {
-						myCount++;
-						if (myCount == 5) { // 양끝 중 아무 빈곳에 가중치 왕창 이벤트
-							/*
-							 * if (i - 5 < 0 && PlayBoard.playBoard[i + 1][j] == 0) { // |[11111]0 (right) ?
-							 * superWeight[i + 1][j] += 40; add++; }
-							 * 
-							 * else if (i + 1 > 18 && PlayBoard.playBoard[i - 5][j] == 0) { // 0[11111]|
-							 * (left) ? superWeight[i - 5][j] += 40; add++; }
-							 */
-
-							/* else */ if (i - 5 > 0 && PlayBoard.playBoard[i - 5][j] == 0) { // 0[11111] (left)
-								superWeight[i - 5][j] += 80;
-								add++;
-							}
-
-							else if (i + 1 < 19 && PlayBoard.playBoard[i + 1][j] == 0) { // *[11111]0 (right)
-								superWeight[i + 1][j] += 80;
-								add++;
-							}
-						}
-					} else
-						myCount = 0;
-				} catch (ArrayIndexOutOfBoundsException e) {
 				}
 			}
-		}
 
-		if (add >= 2)
-			return;
-		// 공격/가로/4-2/1-4-1
-		for (int j = 0; j < 19; j++) {
-			myCount = 0;
+			if (add >= 2)
+				return;
+			// 공격/세로/3-1-1-1/1-3-1-1
 			for (int i = 0; i < 19; i++) {
-				try {
-					if (PlayBoard.playBoard[i][j] == Main.ComC) {
-						myCount++;
-						if (myCount == 4) {
+				myCount = 0;
+				for (int j = 0; j < 19; j++) {
+					try {
+						if (PlayBoard.playBoard[i][j] == Main.UserC) {
+							myCount++;
+							if (myCount == 3) { // 세번연속일때
 
-							/*
-							 * if (i - 4 < 0 && PlayBoard.playBoard[i + 1][j] == 0 && PlayBoard.playBoard[i
-							 * + 2][j] == 0) { // |[1111]00 right //? superWeight[i + 1][j] += 40;
-							 * superWeight[i + 2][j] += 40; add += 2; }
-							 * 
-							 * else if (i + 1 > 18 && PlayBoard.playBoard[i - 5][j] == 0 &&
-							 * PlayBoard.playBoard[i - 4][j] == 0) { // 00[1111]| //(left) //? superWeight[i
-							 * - 5][j] += 40; superWeight[i - 4][j] += 40; add += 2; }
-							 */
+								if (j + 3 < 19 && PlayBoard.playBoard[i][j + 1] == 0
+										&& PlayBoard.playBoard[i][j + 2] == Main.UserC
+										&& PlayBoard.playBoard[i][j + 3] == 0) { // [111]010 right
 
-							/* else */ if (i - 4 > 0 && i + 1 < 19 && PlayBoard.playBoard[i - 4][j] == 0
-									&& PlayBoard.playBoard[i + 1][j] == 0) { // 0[1111]0 (mid)
-								superWeight[i - 4][j] += 80;
-								superWeight[i + 1][j] += 80;
-								add += 2;
-							}
+									superWeight[i][j + 1] += 40;
+									superWeight[i][j + 3] += 40;
+									add += 2;
+								}
 
-							if (i - 5 > 0 && PlayBoard.playBoard[i - 4][j] == 0 && PlayBoard.playBoard[i - 5][j] == 0) { // 00[1111]
-																															// left
-								superWeight[i - 4][j] += 80;
-								superWeight[i - 5][j] += 80;
-								add += 2;
-							} else if (i + 2 < 19 && PlayBoard.playBoard[i + 1][j] == 0
-									&& PlayBoard.playBoard[i + 2][j] == 0) { // [1111]00 right
-								superWeight[i + 2][j] += 80;
-								superWeight[i + 1][j] += 80;
-								add += 2;
-							}
+								else if (j - 5 > 0
+										&& (PlayBoard.playBoard[i][j - 3] == 0 && PlayBoard.playBoard[i][j - 4] == Main.UserC
+												&& PlayBoard.playBoard[i][j - 5] == 0)) { // 010[111] left
 
+									superWeight[i][j - 3] += 40;
+									superWeight[i][j - 5] += 40;
+									add += 2;
+								}
+
+								else if (j - 3 > 0 && j + 2 < 19 && PlayBoard.playBoard[i][j - 3] == 0
+										&& PlayBoard.playBoard[i][j + 1] == 0
+										&& PlayBoard.playBoard[i][j + 2] == Main.UserC) { // 0[111]01 mid
+									superWeight[i][j - 3] += 40;
+									superWeight[i][j + 2] += 40;
+									add += 2;
+								} else if (j - 4 > 0 && j + 1 < 19 && PlayBoard.playBoard[i][j - 3] == 0
+										&& PlayBoard.playBoard[i][j - 4] == Main.UserC
+										&& PlayBoard.playBoard[i][j + 1] == 0) { // 10[111]0 mid
+									superWeight[i][j - 3] += 40;
+									superWeight[i][j + 1] += 40;
+									add += 2;
+								}
+							} else
+								myCount = 0;
 						}
-					} else
-						myCount = 0;
-				} catch (ArrayIndexOutOfBoundsException e) {
+					} catch (ArrayIndexOutOfBoundsException e) {
+					}
 				}
 			}
-		}
 
-		if (add >= 2)
-			return;
-		// 공격/가로/3-1-1-1
-		for (int j = 0; j < 19; j++) {
-			myCount = 0;
+			if (add >= 2)
+				return;
+			// 공격/세로/3-2-1
 			for (int i = 0; i < 19; i++) {
-				try {
-					if (PlayBoard.playBoard[i][j] == Main.ComC) {
-						myCount++;
-						if (myCount == 3) {
-							if (i + 3 < 19 && PlayBoard.playBoard[i + 1][j] == 0
-									&& PlayBoard.playBoard[i + 2][j] == Main.ComC
-									&& PlayBoard.playBoard[i + 3][j] == 0) { // [111]010 right
+				myCount = 0;
+				for (int j = 0; j < 19; j++) {
+					try {
+						if (PlayBoard.playBoard[i][j] == Main.UserC) {
+							myCount++;
+							if (myCount == 3) { // 세번연속일때
 
-								superWeight[i + 3][j] += 40;
-								superWeight[i + 1][j] += 40;
-								add += 2;
-							} else if (i - 5 > 0 && PlayBoard.playBoard[i - 3][j] == 0
-									&& PlayBoard.playBoard[i - 4][j] == Main.ComC
-									&& PlayBoard.playBoard[i - 5][j] == 0) { // 010[111] left
+								if (j + 3 < 19 && (PlayBoard.playBoard[i][j + 1] == 0 && PlayBoard.playBoard[i][j + 2] == 0
+										&& PlayBoard.playBoard[i][j + 3] == Main.UserC)) { // [111]001 right
 
-								superWeight[i - 3][j] += 40;
-								superWeight[i - 5][j] += 40;
-								add += 2;
-							}
+									superWeight[i][j + 1] += 40;
+									superWeight[i][j + 2] += 40;
+									add += 2;
+								}
+
+								else if (j - 5 > 0
+										&& (PlayBoard.playBoard[i][j - 3] == 0 && PlayBoard.playBoard[i][j - 4] == 0
+												&& PlayBoard.playBoard[i][j - 5] == Main.UserC)) { // 100[111] left
+
+									superWeight[i][j - 3] += 40;
+									superWeight[i][j - 4] += 40;
+									add += 2;
+
+								}
+							} else
+								myCount = 0;
 						}
-					} else
-						myCount = 0;
-				} catch (ArrayIndexOutOfBoundsException e) {
+					} catch (ArrayIndexOutOfBoundsException e) {
+					}
 				}
 			}
-		}
 
-		if (add >= 2)
-			return;
-		// 공격/가로/3-2-1/1-3-1-1
-		for (int j = 0; j < 19; j++) {
-			myCount = 0;
+			if (add >= 2)
+				return;
+			// 공격/세로/2-2-2/1-2-1-2/1-1-1-1-2/1-1-2-1-1
 			for (int i = 0; i < 19; i++) {
-				try {
-					if (PlayBoard.playBoard[i][j] == Main.ComC) {
-						myCount++;
-						if (myCount == 3) {
-							if (i + 3 < 19 && PlayBoard.playBoard[i + 1][j] == 0 && PlayBoard.playBoard[i + 2][j] == 0
-									&& PlayBoard.playBoard[i + 3][j] == Main.ComC) { // [111]001 right
-								superWeight[i + 1][j] += 40;
-								superWeight[i + 2][j] += 40;
-								add += 2;
-							} else if (i - 5 > 0 && PlayBoard.playBoard[i - 3][j] == 0
-									&& PlayBoard.playBoard[i - 4][j] == 0
-									&& PlayBoard.playBoard[i - 5][j] == Main.ComC) {// 100[111] left
-
-								superWeight[i - 3][j] += 40;
-								superWeight[i - 4][j] += 40;
-								add += 2;
-							}
-							
-							else if (i - 3 > 0 && i + 2 < 19 && PlayBoard.playBoard[i - 3][j] == 0
-									&& PlayBoard.playBoard[i + 1][j] == 0
-									&& PlayBoard.playBoard[i + 2][j] == Main.ComC) { // 0[111]01 mid
-								superWeight[i - 3][j] += 40;
-								superWeight[i + 2][j] += 40;
-								add += 2;
-							} else if (i - 4 > 0 && i + 1 < 19 && PlayBoard.playBoard[i - 3][j] == 0
-									&& PlayBoard.playBoard[i - 4][j] == Main.ComC
-									&& PlayBoard.playBoard[i + 1][j] == 0) { // 10[111]0 mid
-								superWeight[i - 3][j] += 40;
-								superWeight[i + 1][j] += 40;
-								add += 2;
-							}
-						}
-					} else
-						myCount = 0;
-				} catch (ArrayIndexOutOfBoundsException e) {
-				}
-			}
-		}
-
-		if (add >= 2)
-			return;
-		// 공격/가로/2-2-2/1-2-1-2/1-1-1-1-2/1-1-2-1-1
-		for (int j = 0; j < 19; j++) {
-			myCount = 0; // initialize myCount when entering new row
-			for (int i = 0; i < 19; i++) {
-				try {
-					if (PlayBoard.playBoard[i][j] == Main.ComC) {
+				myCount = 0;
+				for (int j = 0; j < 19; j++) {
+					// try { WHY????????????
+					if (PlayBoard.playBoard[i][j] == Main.UserC) {
 						myCount++;
 						if (myCount == 2) {
-							if (i + 4 < 19 && PlayBoard.playBoard[i + 1][j] == 0 && PlayBoard.playBoard[i + 2][j] == 0
-									&& PlayBoard.playBoard[i + 3][j] == Main.ComC
-									&& PlayBoard.playBoard[i + 4][j] == Main.ComC) { // [11]0011 (right)
-								superWeight[i + 1][j] += 40;
-								superWeight[i + 2][j] += 40;
-								add += 2;
-							}
-							/*
-							 * else if (i - 5 > 0 && PlayBoard.playBoard[i - 2][j] == 0 &&
-							 * PlayBoard.playBoard[i - 3][j] == 0 && PlayBoard.playBoard[i - 4][j] ==
-							 * Main.ComC && PlayBoard.playBoard[i - 5][j] == Main.ComC) { // 1100[11] left
-							 * // same as above superWeight[i - 2][j] += 40; superWeight[i - 3][j] += 40;
-							 * add += 2; }
-							 */
-							else if (i - 2 > 0 && i + 3 < 19 && PlayBoard.playBoard[i - 2][j] == 0
-									&& PlayBoard.playBoard[i + 1][j] == 0 && PlayBoard.playBoard[i + 2][j] == Main.ComC
-									&& PlayBoard.playBoard[i + 3][j] == Main.ComC) { // 0[11]011 (mid)
-								superWeight[i - 2][j] += 40;
-								superWeight[i + 1][j] += 40;
-								add += 2;
-							}
 
-							/*
-							 * else if (i - 5 > 0 && PlayBoard.playBoard[i - 2][j] == 0 &&
-							 * PlayBoard.playBoard[i - 5][j] == 0 && PlayBoard.playBoard[i - 3][j] ==
-							 * Main.ComC && PlayBoard.playBoard[i - 4][j] == Main.ComC) { // 0110[11] (left)
-							 * // same as above superWeight[i - 2][j] += 40; superWeight[i - 5][j] += 40;
-							 * add += 2; }
-							 */
+							try {
 
-							else if (i - 5 > 0 && PlayBoard.playBoard[i - 2][j] == 0
-									&& PlayBoard.playBoard[i - 4][j] == 0 && PlayBoard.playBoard[i - 3][j] == Main.ComC
-									&& PlayBoard.playBoard[i - 5][j] == Main.ComC) { // 1010[11] (left)
-								superWeight[i - 2][j] += 40;
-								superWeight[i - 4][j] += 40;
-								add += 2;
-							}
-
-							else if (i - 3 > 0 && i + 2 < 19 && PlayBoard.playBoard[i - 2][j] == 0
-									&& PlayBoard.playBoard[i + 1][j] == 0 && PlayBoard.playBoard[i - 3][j] == Main.ComC
-									&& PlayBoard.playBoard[i + 2][j] == Main.ComC) { // 10[11]01 mid
-								superWeight[i - 2][j] += 40;
-								superWeight[i + 1][j] += 40;
-								add += 2;
-							}
-
-							else if (i + 4 < 19 && PlayBoard.playBoard[i + 1][j] == 0
-									&& PlayBoard.playBoard[i + 3][j] == 0 && PlayBoard.playBoard[i + 2][j] == Main.ComC
-									&& PlayBoard.playBoard[i + 4][j] == Main.ComC) { // [11]0101 (right)
-								superWeight[i + 3][j] += 40;
-								superWeight[i + 1][j] += 40;
-								add += 2;
-							}
-
-							else if (i + 4 < 19 && PlayBoard.playBoard[i + 1][j] == 0
-									&& PlayBoard.playBoard[i + 4][j] == 0 && PlayBoard.playBoard[i + 2][j] == Main.ComC
-									&& PlayBoard.playBoard[i + 3][j] == Main.ComC) { // [11]0110 (right)
-								superWeight[i + 4][j] += 40;
-								superWeight[i + 1][j] += 40;
-								add += 2;
-							}
-
-							/*
-							 * else if (i - 4 > 0 && i + 1 < 19 && PlayBoard.playBoard[i + 1][j] == 0 &&
-							 * PlayBoard.playBoard[i - 2][j] == 0 && PlayBoard.playBoard[i - 3][j] ==
-							 * Main.ComC && PlayBoard.playBoard[i - 4][j] == Main.ComC) { // 110[11]0 (mid)
-							 * //same as above superWeight[i - 2][j] += 40; superWeight[i + 1][j] += 40;
-							 * add++; }
-							 */
+								if (j + 4 < 19 && PlayBoard.playBoard[i][j + 1] == 0 && PlayBoard.playBoard[i][j + 2] == 0
+										&& PlayBoard.playBoard[i][j + 3] == Main.UserC
+										&& PlayBoard.playBoard[i][j + 4] == Main.UserC) { // [11]0011 right
+									superWeight[i][j + 1] += 40;
+									superWeight[i][j + 2] += 40;
+									add += 2;
+								} /*
+									 * else if (j - 5 > 0 && PlayBoard.playBoard[i][j - 2] == 0 &&
+									 * PlayBoard.playBoard[i][j - 3] == 0 && PlayBoard.playBoard[i][j - 4] ==
+									 * Main.UserC && PlayBoard.playBoard[i][j - 5] == Main.UserC) { // 1100[11] left
+									 * superWeight[i][j - 2] += 40; superWeight[i][j - 3] += 40; add += 2; }
+									 */ else if (j - 2 > 0 && j + 3 > 19 && PlayBoard.playBoard[i][j - 2] == 0
+										&& PlayBoard.playBoard[i][j + 1] == 0 && PlayBoard.playBoard[i][j + 2] == Main.UserC
+										&& PlayBoard.playBoard[i][j + 3] == Main.UserC) { // 0[11]011 mid
+									superWeight[i][j - 2] += 40;
+									superWeight[i][j + 1] += 40;
+									add += 2;
+								} /*
+									 * else if (j - 5 > 0 && PlayBoard.playBoard[i][j - 2] == 0 &&
+									 * PlayBoard.playBoard[i][j - 5] == 0 && PlayBoard.playBoard[i][j - 3] ==
+									 * Main.UserC && PlayBoard.playBoard[i][j - 4] == Main.UserC) { // 0110[11] left
+									 * superWeight[i][j - 2] += 40; superWeight[i][j - 5] += 40; add += 2; }
+									 */ else if (j - 5 > 0 && PlayBoard.playBoard[i][j - 2] == 0
+										&& PlayBoard.playBoard[i][j - 4] == 0 && PlayBoard.playBoard[i][j - 3] == Main.UserC
+										&& PlayBoard.playBoard[i][j - 5] == Main.UserC) { // 1010[11] left
+									superWeight[i][j - 2] += 40;
+									superWeight[i][j - 4] += 40;
+									add += 2;
+								} else if (j - 3 > 0 && j + 2 < 19 && PlayBoard.playBoard[i][j - 2] == 0
+										&& PlayBoard.playBoard[i][j + 1] == 0 && PlayBoard.playBoard[i][j - 3] == Main.UserC
+										&& PlayBoard.playBoard[i][j + 2] == Main.UserC) { // 10[11]01 mid
+									superWeight[i][j - 2] += 40;
+									superWeight[i][j + 1] += 40;
+									add += 2;
+								} else if (j + 4 < 19 && PlayBoard.playBoard[i][j + 1] == 0
+										&& PlayBoard.playBoard[i][j + 3] == 0 && PlayBoard.playBoard[i][j + 2] == Main.UserC
+										&& PlayBoard.playBoard[i][j + 4] == Main.UserC) { // [11]0101 right
+									superWeight[i][j + 3] += 40;
+									superWeight[i][j + 1] += 40;
+									add += 2;
+								} else if (j + 4 < 19 && PlayBoard.playBoard[i][j + 1] == 0
+										&& PlayBoard.playBoard[i][j + 4] == 0 && PlayBoard.playBoard[i][j + 2] == Main.UserC
+										&& PlayBoard.playBoard[i][j + 3] == Main.UserC) { // [11]0110 right
+									superWeight[i][j + 4] += 40;
+									superWeight[i][j + 1] += 40;
+									add += 2;
+								} /*
+									 * else if (j - 4 > 0 && j + 1 < 19 && PlayBoard.playBoard[i][j + 1] == 0 &&
+									 * PlayBoard.playBoard[i][j - 2] == 0 && PlayBoard.playBoard[i][j - 3] ==
+									 * Main.UserC && PlayBoard.playBoard[i][j - 4] == Main.UserC) { // 110[11]0 mid
+									 * superWeight[i][j - 2] += 40; superWeight[i][j + 1] += 40; add += 2; }
+									 */
+							} catch (ArrayIndexOutOfBoundsException e) {}
 						}
-					} else
-						myCount = 0;
-				} catch (ArrayIndexOutOfBoundsException e) {
+					} else myCount = 0;
+					// }catch (ArrayIndexOutOfBoundsException e) {}
 				}
 			}
-		}
-	        
-	        
-	  //좌대각 시작점 ----------------------------------------------------------------------
 
-	     
-	     
-	     if(add >= 2) return;
-	  // 5 왼쪽 위에서 오른쪽 아래(좌대각\) 공격 
-	     for (int i = 0; i < 19; i++) {
-	        myCount = 0;
-	        for (int j = 0; j < 19; j++) {
-	           int temp1 = i;
-	           int temp2 = j;
-	           for (int k = 0; k < 5; k++) {
-	           	try {
-	               if (PlayBoard.playBoard[temp1][temp2] == Main.ComC) {
-	                 myCount++;
-	                    if (myCount == 5) {
-	                   	if((temp1 - 5 < 0 || temp2 - 5 < 0) && PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0) {
-								superWeight[temp1 + 1][temp2 + 1] += 40; add++;
-							}else if((temp1 + 1 > 18 || temp2 + 1 > 18) && PlayBoard.playBoard[temp1 - 5][temp2 - 5] == 0){
-								superWeight[temp1 - 5][temp2 - 5] += 40; add++;
-							}else if ((temp1 - 5 < 0 || temp2 - 5 < 0) && PlayBoard.playBoard[temp1 - 5][temp2 - 5] == 0) {
-	                       	superWeight[temp1 - 5][temp2 - 5] += 80; add++;
-	                       }else if ((temp1 + 1 > 18 || temp2 + 1 > 18) && PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0) {
-	                       	superWeight[temp1 + 1][temp2 + 1] += 80; add++;
-	                       } 
-	                    }
-	                 temp1++;
-	                 temp2++;
-	              } else myCount = 0;
-	              } catch (ArrayIndexOutOfBoundsException e) {}
-	           }
-	        }
-	     }
-	     
-	     
-	     
-	     if(add >= 2) return;
-	     // 4 왼쪽 위에서 오른쪽 아래(좌대각\) 공격
-	     for (int i = 0; i < 19; i++) {
-	        myCount = 0;
-	        for (int j = 0; j < 19; j++) {
-	           int temp1 = i;
-	           int temp2 = j;
-	           for (int k = 0; k < 4; k++) {
-	           	try {
-		                if (PlayBoard.playBoard[temp1][temp2] == Main.ComC) {
-		                  myCount++;
-		                     if (myCount == 4) {
-		                    	 if((temp1 - 4 <= 0 || temp2 - 4 <= 0) && (temp1 + 2 <= 18 && temp2 +2 <= 18) && PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 + 2] == 0) {
-									superWeight[temp1 + 1][temp2 + 1] += 40; add++;
-									superWeight[temp1 + 2][temp2 + 2] += 40; add++;
-								}else if((temp1 + 1 >= 18 || temp2 + 1 >= 18) && (temp1 - 5 >= 0 && temp2 - 5 >= 0) && PlayBoard.playBoard[temp1 - 5][temp2 - 5] == 0 && PlayBoard.playBoard[temp1 - 4][temp2 - 4] == 0){
-									superWeight[temp1 - 5][temp2 - 5] += 40; add++;
-									superWeight[temp1 - 4][temp2 - 4] += 40; add++;
-								}else if ((temp1 -4 > 0 && temp2 -4 > 0) && (temp1 + 1 < 19 && temp2 + 1 < 19) && PlayBoard.playBoard[temp1 - 4][temp2 - 4] == 0 && PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0) {
-		                        	superWeight[temp1 - 4][temp2 - 4] += 80; add++;
-		                        	superWeight[temp1 + 1][temp2 + 1] += 80; add++;
-		                        } else if ((temp1 - 5 >= 0 && temp2 - 5 >= 0) && (PlayBoard.playBoard[temp1 - 4][temp2 - 4] == 0 && PlayBoard.playBoard[temp1 - 5][temp2 - 5] == 0)) {
-	                       	   	superWeight[temp1 - 4][temp2 - 4] += 80; add++;
-	                       	   	superWeight[temp1 - 5][temp2 - 5] += 80; add++;
-	                          } else if ((temp1 + 2 <= 18 && temp2 +2 <= 18) && (PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0&& PlayBoard.playBoard[temp1 + 2][temp2 + 2] == 0)) {
-	                       	    superWeight[temp1 + 1][temp2 + 1] += 80; add++;
-	                       	    superWeight[temp1 + 2][temp2 + 2] += 80; add++;
-	                          }
-		                     }
-		                  temp1++;
-		                  temp2++;
-		               } else myCount = 0;
-	              } catch (ArrayIndexOutOfBoundsException e) {}
-	           }
-	        }
-	     }
-	     
+		     
 
-		   if(add >= 2) return;
-		   // 3(좌대각\) 1공백 공격
-		   for(int i = 0;i<19;i++){
-		      myCount = 0;
-		      for (int j = 0; j < 19; j++) {
-		         int temp1 = i;
-		         int temp2 = j;
-		         for (int k = 0; k < 3; k++) {
-		        	 try {
-			             if (PlayBoard.playBoard[temp1][temp2] == Main.ComC) {
-			               myCount++;
-			                  if (myCount == 3) {
-			                    if ((temp1 + 3 <= 18 && temp2 + 3 <= 18) && PlayBoard.playBoard[temp1 + 1][temp2+ 1] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 + 2] == Main.ComC && PlayBoard.playBoard[temp1 + 3][temp2+ 3] == 0) {
-									superWeight[temp1 + 1][temp2+ 1] += 40; add++;
-			                    	superWeight[temp1 + 3][temp2+ 3] += 40; add++;
-			                    	
-				                 }else if ((temp1 - 5 >= 0 && temp2 - 5 >= 0) && PlayBoard.playBoard[temp1 - 3][temp2- 3] == 0 && PlayBoard.playBoard[temp1 - 4][temp2- 4] == Main.ComC && PlayBoard.playBoard[temp1 - 5][temp2- 5] == 0) {
-				                	superWeight[temp1 - 5][temp2 - 5] += 40; add++;
-			                    	superWeight[temp1 - 3][temp2 - 3] += 40; add++;
-				                 }
-				               temp1++;
-				               temp2++;
-			                  } else myCount = 0;
-			             }
-		            } catch (ArrayIndexOutOfBoundsException e) {}
-		           }
-		         
-		      }
-		   }
-		   
-		   
-		   if(add >= 2) return;
-		   // 3(좌대각\) 2공백 1 공격
-		   for(int i = 0;i<19;i++){
-		      myCount = 0;
-		      for (int j = 0; j < 19; j++) {
-		         int temp1 = i;
-		         int temp2 = j;
-		         for (int k = 0; k < 3; k++) {
-		        	try {
-			            if (PlayBoard.playBoard[temp1][temp2] == Main.ComC) {
-			               myCount++;
-			               if (myCount == 3) {
-			                    if ((temp1 + 3 <= 18 && temp2 + 3 <= 18) && PlayBoard.playBoard[temp1 + 1][temp2+ 1] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 + 2] == 0 && PlayBoard.playBoard[temp1 + 3][temp2+ 3] == Main.ComC) {
-									superWeight[temp1 + 1][temp2+ 1] += 40; add++;
-			                    	superWeight[temp1 + 2][temp2+ 2] += 40; add++;
-			                    	
-				                 }else if ((temp1 - 5 >= 0 && temp2 - 5 >= 0) && PlayBoard.playBoard[temp1 - 3][temp2- 3] == 0 && PlayBoard.playBoard[temp1 - 4][temp2- 4] == 0 && PlayBoard.playBoard[temp1 - 5][temp2- 5] == Main.ComC) {
-				                	superWeight[temp1 - 4][temp2 - 4] += 40; add++;
-			                    	superWeight[temp1 - 3][temp2 - 3] += 40; add++;
-				                 }
-				               temp1++;
-				               temp2++;
-			                  } else myCount = 0;
-			            	}
-		        	 }catch (ArrayIndexOutOfBoundsException e) {}
-		         }
-		      }
-		   }
-		   
+			//가로 시작점 -------------------------------------------------------------------------------------------------
 
-		   if(add >= 2) return;
-		      // 2 (공백2) 2 공격 (좌대각\)왼쪽 위에서 오른쪽 아래
-		      for (int i = 0; i < 19; i++) {
-		          myCount = 0;
-		          for (int j = 0; j < 19; j++) {
-		             int temp1 = i;
-		              int temp2 = j;
-		              for (int k = 0; k < 2; k++) {
-		                 try {
-		                      if (PlayBoard.playBoard[temp1][temp2] == Main.ComC) {
-		                            myCount++;
-		                            try {
-		                               if (myCount == 2) {
-		                            	   //101011(up)
-		                                   if ((temp1 - 5 >= 0 && temp2 - 5 >= 0 )&& PlayBoard.playBoard[temp1 - 4][temp2 - 4] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 - 3][temp2 - 3] == Main.ComC && PlayBoard.playBoard[temp1 - 5][temp2 - 5] == Main.ComC) {
-		                                          superWeight[temp1 - 4][temp2 - 4] += 40; add++;
-		                                          superWeight[temp1 - 2][temp2 - 2] += 40; add++;
-		                                    }
-		                                   //110011(up)
-		                                    else if ((temp1 - 5 >= 0 && temp2 - 5 >= 0 )&& PlayBoard.playBoard[temp1 - 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 - 3][temp2 - 3] == 0 && PlayBoard.playBoard[temp1 - 4][temp2 - 4] == Main.ComC && PlayBoard.playBoard[temp1 - 5][temp2 - 5] == Main.ComC) {
-		                                          superWeight[temp1 - 2][temp2 - 2] += 40; add++;
-		                                          superWeight[temp1 - 3][temp2 - 3] += 40; add++;
-		                                    }
-		                                   //011011(up)
-		                                    else if ((temp1 - 5 >= 0 && temp2 - 5 >= 0 )&& PlayBoard.playBoard[temp1 - 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 - 5][temp2 - 5] == 0 && PlayBoard.playBoard[temp1 - 4][temp2 - 4] == Main.ComC && PlayBoard.playBoard[temp1 - 3][temp2 - 3] == Main.ComC) {
-		                                          superWeight[temp1 - 2][temp2 - 2] += 40; add++;
-		                                          superWeight[temp1 - 5][temp2 - 5] += 40; add++;
-		                                    }
-		                                   //110110(mid)
-		                                    else if ((temp1 - 4 >= 0 && temp2 - 4 >= 0 && temp1 + 1 <= 18 && temp2 + 1 <= 18) && PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 - 3][temp2 - 3] == Main.ComC && PlayBoard.playBoard[temp1 - 4][temp2 - 4] == Main.ComC) {
-		                                       superWeight[temp1 + 1][temp2 + 1] += 40; add++;
-		                                       superWeight[temp1 - 2][temp2 - 2] += 40; add++;
-		                                    }
-		                                   //011011(mid)
-		                                    else if ((temp1 - 2 >= 0 && temp2 - 2 >= 0 && temp1 + 3 <= 18 && temp2 + 3 <= 18) && PlayBoard.playBoard[temp1 - 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 + 2] == Main.ComC && PlayBoard.playBoard[temp1 + 3][temp2 + 3] == Main.ComC) {
-		                                          superWeight[temp1 - 2][temp2 - 2] += 40; add++;
-		                                          superWeight[temp1 + 1][temp2 + 1] += 40; add++;
-		                                    }
-		                                   //110110(mid)
-		                                    else if ((temp1 - 4 >= 0 && temp2 - 4 >= 0 && temp1 + 1 <= 18 && temp2 + 1 <= 18) && PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 - 3][temp2 - 3] == Main.ComC && PlayBoard.playBoard[temp1 - 4][temp2 - 4] == Main.ComC) {
-		                                       superWeight[temp1 + 1][temp2 + 1] += 40; add++;
-		                                       superWeight[temp1 - 2][temp2 - 2] += 40; add++;
-		                                   }
-		                                   //110110(down)
-			                                   else if ((temp1- 4 <= 18 && temp2 - 4 <= 18) && PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 + 4][temp2 + 4] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 + 2] == Main.ComC && PlayBoard.playBoard[temp1 + 3][temp2 + 3] == Main.ComC) {
-			                                       superWeight[temp1 + 1][temp2 + 1] += 40; add++;
-			                                       superWeight[temp1 + 4][temp2 + 4] += 40; add++;
-			                               }
-		                                   //110011(down)
-		                                    else if ((temp1- 4 <= 18 && temp2 - 4 <= 18) && PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 + 2] == 0 && PlayBoard.playBoard[temp1 + 3][temp2 + 3] == Main.ComC && PlayBoard.playBoard[temp1 + 4][temp2 + 4] == Main.ComC) {
-		                                          superWeight[temp1 + 1][temp2 + 1] += 40; add++;
-		                                          superWeight[temp1 + 2][temp2 + 2] += 40; add++;
-		                                   }
-		                                   //110101(down)
-		                                    else if ((temp1- 4 <= 18 && temp2 - 4 <= 18) && PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 + 4][temp2 + 4] == 0 && PlayBoard.playBoard[temp1 + 3][temp2 + 3] == Main.ComC && PlayBoard.playBoard[temp1 + 2][temp2 + 2] == Main.ComC) {
-		                                          superWeight[temp1 + 1][temp2 + 1] += 40; add++;
-		                                          superWeight[temp1 + 4][temp2 + 4] += 40; add++;
-		                                   }
-		                               }
-		                            } catch (ArrayIndexOutOfBoundsException e) {}
-		                            temp1++;
-		                            temp2++;
-		                         } else myCount = 0;
-		                 }
-		                 catch(ArrayIndexOutOfBoundsException e) {}
-		              }
-		              }
-		          }
-		      
-		      
-		      //우대각 시작점 -----------------------------------------------------------------------------------------
-		       
-	 if(add >= 2) return;
-	 // 5 오른쪽위에서 왼쪽아래 (우대각/) 공격 
-	     for (int j = 0; j < 19; j++) {
-	        myCount = 0;
-	        for (int i = 0; i < 19; i++) {
-	           int temp1 = i;
-	           int temp2 = j;
-	           for (int k = 0; k < 5; k++) {
-	           	try {
-	           	if (PlayBoard.playBoard[temp1][temp2] == Main.ComC) {
-	           		myCount++;
-	                    if (myCount == 5) {
-	                   	 //우상단 막히고 좌하단 뚫림
-	                   	if((temp1 + 5 > 18 || temp2 - 5 < 0) && (temp1 - 1 >= 0 || temp2 + 1 <= 18) && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0) {
-								superWeight[temp1 - 1][temp2 + 1] += 40; add++;
+			if (add >= 2)
+				return;
+			// 공격/가로/5-1
+			for (int j = 0; j < 19; j++) {
+				myCount = 0;
+				for (int i = 0; i < 19; i++) {
+					try {
+						if (PlayBoard.playBoard[i][j] == Main.UserC) {
+							myCount++;
+							if (myCount == 5) { // 양끝 중 아무 빈곳에 가중치 왕창 이벤트
+								/*
+								 * if (i - 5 < 0 && PlayBoard.playBoard[i + 1][j] == 0) { // |[11111]0 (right) ?
+								 * superWeight[i + 1][j] += 40; add++; }
+								 * 
+								 * else if (i + 1 > 18 && PlayBoard.playBoard[i - 5][j] == 0) { // 0[11111]|
+								 * (left) ? superWeight[i - 5][j] += 40; add++; }
+								 */
+
+								/* else */ if (i - 5 > 0 && PlayBoard.playBoard[i - 5][j] == 0) { // 0[11111] (left)
+									superWeight[i - 5][j] += 80;
+									add++;
+								}
+
+								else if (i + 1 < 19 && PlayBoard.playBoard[i + 1][j] == 0) { // *[11111]0 (right)
+									superWeight[i + 1][j] += 80;
+									add++;
+								}
 							}
-	                   	//좌하단 막히고 우상단 뚫림
-							else if((temp1 - 1 < 0 || temp2 + 1 > 18) && (temp1 + 5 <= 18 && temp2 - 5 >= 0) && PlayBoard.playBoard[temp1 + 5][temp2 - 5] == 0){
-								superWeight[temp1 + 5][temp2 - 5] += 40; add++;
-							}
-	                   	//우상단 자리있음
-							else if ((temp1 + 5 <= 18 && temp2 - 5 >= 0) && PlayBoard.playBoard[temp1 + 5][temp2 - 5] == 0) {
-	                       	superWeight[temp1 + 5][temp2 - 5] += 80;  add++;
-	                       } 
-	                   	//좌하단 자리있음
-							else if ((temp1 - 1 >= 0 || temp2 + 1 <= 18) && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0) {
-	                       	superWeight[temp1 - 1][temp2 + 1] += 80; add++;
-	                       }
-	                    }
-	                    temp1--;
-	                    temp2++;
-	               } else myCount = 0;
-	              } catch (ArrayIndexOutOfBoundsException e) {}
-	           }
-	        }
-	     }
-	     
-	     
-	     
-	     if(add >= 2) return;
-	     // 4 오른쪽위에서 왼쪽아래 (우대각/) 공격
-	     for (int j = 0; j < 19; j++) {
-	        myCount = 0;
-	        for (int i = 0; i < 19; i++) {
-	           int temp1 = i;
-	           int temp2 = j;
-	           for (int k = 0; k < 4; k++) {
-	           	try {
-		                if (PlayBoard.playBoard[temp1][temp2] == Main.ComC) {
-		                  myCount++;
-		                     if (myCount == 4) {
-		                    	 //우상단 막히고 좌하단에 두개
-		                    	 if((temp1 + 4 > 18 || temp2 - 4 < 0) && (temp1 - 2 >= 0 && temp2 + 2 <= 18) && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 + 2] == 0) {
-									superWeight[temp1 - 1][temp2 + 1] += 40; add++;
-									superWeight[temp1 - 2][temp2 + 2] += 40; add++;
-								//촤하단 막히고 우상단에 두개
-								}else if((temp1 + 1 > 18 || temp2 - 1 < 0) && (temp1 + 5 >= 0 && temp2 - 5 >= 0) && PlayBoard.playBoard[temp1 + 5][temp2 - 5] == 0 && PlayBoard.playBoard[temp1 + 4][temp2 - 4] == 0){
-									superWeight[temp1 + 5][temp2 - 5] += 40; add++;
-									superWeight[temp1 + 4][temp2 - 4] += 40; add++;
-								//우상단 좌하단에 하나씩 뚫림 
-								}else if ((temp1 + 4 <= 18 && temp2 - 4 >= 0) && (temp1 - 1 >= 0 && temp2 + 1 <= 18) && PlayBoard.playBoard[temp1 + 4][temp2 - 4] == 0 && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0) {
-		                        	superWeight[temp1 + 4][temp2 - 4] += 80; add++;
-		                        	superWeight[temp1 - 1][temp2 + 1] += 80; add++;
-		                        //우상단에 두개
-		                        } else if ((temp1 + 5 >= 0 && temp2 - 5 >= 0) && PlayBoard.playBoard[temp1 + 5][temp2 - 5] == 0 && PlayBoard.playBoard[temp1 + 4][temp2 - 4] == 0) {
-		                        	superWeight[temp1 + 5][temp2 - 5] += 40; add++;
-									superWeight[temp1 + 4][temp2 - 4] += 40; add++;
-	                       	//좌하단에 두개
-	                          } else if ((temp1 - 2 >= 0 && temp2 +2 <= 18) && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 + 2] == 0) {
-	                       	    superWeight[temp1 - 1][temp2 + 1] += 40; add++;
-									superWeight[temp1 - 2][temp2 + 2] += 40; add++;
-	                          }
-		                     }
-		                  temp1--;
-		                  temp2++;
-		               } else myCount = 0;
-	              } catch (ArrayIndexOutOfBoundsException e) {}
-	           }
-	        }
-	     }
+						} else
+							myCount = 0;
+					} catch (ArrayIndexOutOfBoundsException e) {
+					}
+				}
+			}
 
-		      
-	     
-	     
-	     if(add >= 2) return;
-	     // 3(우대각/) 1공백 공격
-		   for(int j = 0; j < 19; j++){
-		      myCount = 0;
-		      for (int i = 0;i<19;i++) {
-		         int temp1 = i;
-		         int temp2 = j;
-		         for (int k = 0; k < 3; k++) {
-		        	 try {
-			             if (PlayBoard.playBoard[temp1][temp2] == Main.ComC) {
-			               myCount++;
-			                  if (myCount == 3) {
-			                    if ((temp1 - 3 >= 0 && temp2 + 3 <= 18) && PlayBoard.playBoard[temp1 - 1][temp2+ 1] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 + 2] == Main.ComC && PlayBoard.playBoard[temp1 - 3][temp2+ 3] == 0) {
-			                    	superWeight[temp1 - 1][temp2+ 1] += 40; add++;
-			                    	superWeight[temp1 - 3][temp2+ 3] += 40; add++;
-			                    	
-				                 }else if ((temp1 + 5 <= 18 && temp2 - 5 >= 0) && PlayBoard.playBoard[temp1 + 3][temp2- 3] == 0 && PlayBoard.playBoard[temp1 + 4][temp2- 4] == Main.ComC && PlayBoard.playBoard[temp1 + 5][temp2- 5] == 0) {
-				                	superWeight[temp1 + 5][temp2 - 5] += 40; add++;
-			                    	superWeight[temp1 + 3][temp2 - 3] += 40; add++;
-				                 }
-				               temp1--;
-				               temp2++;
-			                  } else myCount = 0;
-			             }
-		            } catch (ArrayIndexOutOfBoundsException e) {}
-		           }
-		         
-		      }
-		   }
-		   
-		    
-		   if(add >= 2) return;
-		   // 3(우대각/) 2공백 1 공격
-		   for(int j = 0; j < 19; j++){
-		      myCount = 0;
-		      for (int i = 0;i<19;i++) {
-		         int temp1 = i;
-		         int temp2 = j;
-		         for (int k = 0; k < 3; k++) {
-		        	try {
-			            if (PlayBoard.playBoard[temp1][temp2] == Main.ComC) {
-			               myCount++;
-			               if (myCount == 3) {
-			                    if ((temp1 - 3 >= 0 && temp2 + 3 <= 18) && PlayBoard.playBoard[temp1 - 1][temp2+ 1] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 + 2] == 0 && PlayBoard.playBoard[temp1 - 3][temp2+ 3] == Main.ComC) {
-									superWeight[temp1 - 1][temp2+ 1] += 40; add++;
-			                    	superWeight[temp1 - 2][temp2+ 2] += 40; add++;
-			                    	
-				                 }else if ((temp1 + 5 <= 18 && temp2 - 5 >= 0) && PlayBoard.playBoard[temp1 + 3][temp2- 3] == 0 && PlayBoard.playBoard[temp1 + 4][temp2- 4] == 0 && PlayBoard.playBoard[temp1 + 5][temp2- 5] == Main.ComC) {
-				                	superWeight[temp1 + 4][temp2 - 4] += 40; add++;
-			                    	superWeight[temp1 + 3][temp2 - 3] += 40; add++;
-				                 }
-				               temp1--;
-				               temp2++;
-			                  } else myCount = 0;
-			            	}
-		        	 }catch (ArrayIndexOutOfBoundsException e) {}
-		         }
-		      }
-		   }
-		   
-		   
-		   
-		 
+			if (add >= 2)
+				return;
+			// 공격/가로/4-2/1-4-1
+			for (int j = 0; j < 19; j++) {
+				myCount = 0;
+				for (int i = 0; i < 19; i++) {
+					try {
+						if (PlayBoard.playBoard[i][j] == Main.UserC) {
+							myCount++;
+							if (myCount == 4) {
+
+								/*
+								 * if (i - 4 < 0 && PlayBoard.playBoard[i + 1][j] == 0 && PlayBoard.playBoard[i
+								 * + 2][j] == 0) { // |[1111]00 right //? superWeight[i + 1][j] += 40;
+								 * superWeight[i + 2][j] += 40; add += 2; }
+								 * 
+								 * else if (i + 1 > 18 && PlayBoard.playBoard[i - 5][j] == 0 &&
+								 * PlayBoard.playBoard[i - 4][j] == 0) { // 00[1111]| //(left) //? superWeight[i
+								 * - 5][j] += 40; superWeight[i - 4][j] += 40; add += 2; }
+								 */
+
+								/* else */ if (i - 4 > 0 && i + 1 < 19 && PlayBoard.playBoard[i - 4][j] == 0
+										&& PlayBoard.playBoard[i + 1][j] == 0) { // 0[1111]0 (mid)
+									superWeight[i - 4][j] += 80;
+									superWeight[i + 1][j] += 80;
+									add += 2;
+								}
+
+								if (i - 5 > 0 && PlayBoard.playBoard[i - 4][j] == 0 && PlayBoard.playBoard[i - 5][j] == 0) { // 00[1111]
+																																// left
+									superWeight[i - 4][j] += 80;
+									superWeight[i - 5][j] += 80;
+									add += 2;
+								} else if (i + 2 < 19 && PlayBoard.playBoard[i + 1][j] == 0
+										&& PlayBoard.playBoard[i + 2][j] == 0) { // [1111]00 right
+									superWeight[i + 2][j] += 80;
+									superWeight[i + 1][j] += 80;
+									add += 2;
+								}
+
+							}
+						} else
+							myCount = 0;
+					} catch (ArrayIndexOutOfBoundsException e) {
+					}
+				}
+			}
+
+			if (add >= 2)
+				return;
+			// 공격/가로/3-1-1-1
+			for (int j = 0; j < 19; j++) {
+				myCount = 0;
+				for (int i = 0; i < 19; i++) {
+					try {
+						if (PlayBoard.playBoard[i][j] == Main.UserC) {
+							myCount++;
+							if (myCount == 3) {
+								if (i + 3 < 19 && PlayBoard.playBoard[i + 1][j] == 0
+										&& PlayBoard.playBoard[i + 2][j] == Main.UserC
+										&& PlayBoard.playBoard[i + 3][j] == 0) { // [111]010 right
+
+									superWeight[i + 3][j] += 40;
+									superWeight[i + 1][j] += 40;
+									add += 2;
+								} else if (i - 5 > 0 && PlayBoard.playBoard[i - 3][j] == 0
+										&& PlayBoard.playBoard[i - 4][j] == Main.UserC
+										&& PlayBoard.playBoard[i - 5][j] == 0) { // 010[111] left
+
+									superWeight[i - 3][j] += 40;
+									superWeight[i - 5][j] += 40;
+									add += 2;
+								}
+							}
+						} else
+							myCount = 0;
+					} catch (ArrayIndexOutOfBoundsException e) {
+					}
+				}
+			}
+
+			if (add >= 2)
+				return;
+			// 공격/가로/3-2-1/1-3-1-1
+			for (int j = 0; j < 19; j++) {
+				myCount = 0;
+				for (int i = 0; i < 19; i++) {
+					try {
+						if (PlayBoard.playBoard[i][j] == Main.UserC) {
+							myCount++;
+							if (myCount == 3) {
+								if (i + 3 < 19 && PlayBoard.playBoard[i + 1][j] == 0 && PlayBoard.playBoard[i + 2][j] == 0
+										&& PlayBoard.playBoard[i + 3][j] == Main.UserC) { // [111]001 right
+									superWeight[i + 1][j] += 40;
+									superWeight[i + 2][j] += 40;
+									add += 2;
+								} else if (i - 5 > 0 && PlayBoard.playBoard[i - 3][j] == 0
+										&& PlayBoard.playBoard[i - 4][j] == 0
+										&& PlayBoard.playBoard[i - 5][j] == Main.UserC) {// 100[111] left
+
+									superWeight[i - 3][j] += 40;
+									superWeight[i - 4][j] += 40;
+									add += 2;
+								}
+								
+								else if (i - 3 > 0 && i + 2 < 19 && PlayBoard.playBoard[i - 3][j] == 0
+										&& PlayBoard.playBoard[i + 1][j] == 0
+										&& PlayBoard.playBoard[i + 2][j] == Main.UserC) { // 0[111]01 mid
+									superWeight[i - 3][j] += 40;
+									superWeight[i + 2][j] += 40;
+									add += 2;
+								} else if (i - 4 > 0 && i + 1 < 19 && PlayBoard.playBoard[i - 3][j] == 0
+										&& PlayBoard.playBoard[i - 4][j] == Main.UserC
+										&& PlayBoard.playBoard[i + 1][j] == 0) { // 10[111]0 mid
+									superWeight[i - 3][j] += 40;
+									superWeight[i + 1][j] += 40;
+									add += 2;
+								}
+							}
+						} else
+							myCount = 0;
+					} catch (ArrayIndexOutOfBoundsException e) {
+					}
+				}
+			}
+
+			if (add >= 2)
+				return;
+			// 공격/가로/2-2-2/1-2-1-2/1-1-1-1-2/1-1-2-1-1
+			for (int j = 0; j < 19; j++) {
+				myCount = 0; // initialize myCount when entering new row
+				for (int i = 0; i < 19; i++) {
+					try {
+						if (PlayBoard.playBoard[i][j] == Main.UserC) {
+							myCount++;
+							if (myCount == 2) {
+								if (i + 4 < 19 && PlayBoard.playBoard[i + 1][j] == 0 && PlayBoard.playBoard[i + 2][j] == 0
+										&& PlayBoard.playBoard[i + 3][j] == Main.UserC
+										&& PlayBoard.playBoard[i + 4][j] == Main.UserC) { // [11]0011 (right)
+									superWeight[i + 1][j] += 40;
+									superWeight[i + 2][j] += 40;
+									add += 2;
+								}
+								/*
+								 * else if (i - 5 > 0 && PlayBoard.playBoard[i - 2][j] == 0 &&
+								 * PlayBoard.playBoard[i - 3][j] == 0 && PlayBoard.playBoard[i - 4][j] ==
+								 * Main.UserC && PlayBoard.playBoard[i - 5][j] == Main.UserC) { // 1100[11] left
+								 * // same as above superWeight[i - 2][j] += 40; superWeight[i - 3][j] += 40;
+								 * add += 2; }
+								 */
+								else if (i - 2 > 0 && i + 3 < 19 && PlayBoard.playBoard[i - 2][j] == 0
+										&& PlayBoard.playBoard[i + 1][j] == 0 && PlayBoard.playBoard[i + 2][j] == Main.UserC
+										&& PlayBoard.playBoard[i + 3][j] == Main.UserC) { // 0[11]011 (mid)
+									superWeight[i - 2][j] += 40;
+									superWeight[i + 1][j] += 40;
+									add += 2;
+								}
+
+								/*
+								 * else if (i - 5 > 0 && PlayBoard.playBoard[i - 2][j] == 0 &&
+								 * PlayBoard.playBoard[i - 5][j] == 0 && PlayBoard.playBoard[i - 3][j] ==
+								 * Main.UserC && PlayBoard.playBoard[i - 4][j] == Main.UserC) { // 0110[11] (left)
+								 * // same as above superWeight[i - 2][j] += 40; superWeight[i - 5][j] += 40;
+								 * add += 2; }
+								 */
+
+								else if (i - 5 > 0 && PlayBoard.playBoard[i - 2][j] == 0
+										&& PlayBoard.playBoard[i - 4][j] == 0 && PlayBoard.playBoard[i - 3][j] == Main.UserC
+										&& PlayBoard.playBoard[i - 5][j] == Main.UserC) { // 1010[11] (left)
+									superWeight[i - 2][j] += 40;
+									superWeight[i - 4][j] += 40;
+									add += 2;
+								}
+
+								else if (i - 3 > 0 && i + 2 < 19 && PlayBoard.playBoard[i - 2][j] == 0
+										&& PlayBoard.playBoard[i + 1][j] == 0 && PlayBoard.playBoard[i - 3][j] == Main.UserC
+										&& PlayBoard.playBoard[i + 2][j] == Main.UserC) { // 10[11]01 mid
+									superWeight[i - 2][j] += 40;
+									superWeight[i + 1][j] += 40;
+									add += 2;
+								}
+
+								else if (i + 4 < 19 && PlayBoard.playBoard[i + 1][j] == 0
+										&& PlayBoard.playBoard[i + 3][j] == 0 && PlayBoard.playBoard[i + 2][j] == Main.UserC
+										&& PlayBoard.playBoard[i + 4][j] == Main.UserC) { // [11]0101 (right)
+									superWeight[i + 3][j] += 40;
+									superWeight[i + 1][j] += 40;
+									add += 2;
+								}
+
+								else if (i + 4 < 19 && PlayBoard.playBoard[i + 1][j] == 0
+										&& PlayBoard.playBoard[i + 4][j] == 0 && PlayBoard.playBoard[i + 2][j] == Main.UserC
+										&& PlayBoard.playBoard[i + 3][j] == Main.UserC) { // [11]0110 (right)
+									superWeight[i + 4][j] += 40;
+									superWeight[i + 1][j] += 40;
+									add += 2;
+								}
+
+								/*
+								 * else if (i - 4 > 0 && i + 1 < 19 && PlayBoard.playBoard[i + 1][j] == 0 &&
+								 * PlayBoard.playBoard[i - 2][j] == 0 && PlayBoard.playBoard[i - 3][j] ==
+								 * Main.UserC && PlayBoard.playBoard[i - 4][j] == Main.UserC) { // 110[11]0 (mid)
+								 * //same as above superWeight[i - 2][j] += 40; superWeight[i + 1][j] += 40;
+								 * add++; }
+								 */
+							}
+						} else
+							myCount = 0;
+					} catch (ArrayIndexOutOfBoundsException e) {
+					}
+				}
+			}
+		        
+		        
 		  
-		   if(add >= 2) return;
-		      // 2 (공백2) 2 공격 (우대각/)오른쪽 위에서 왼쪽 아래 
-		      for (int i = 0; i < 19; i++) {
-		          myCount = 0;
-		          for (int j = 0; j < 19; j++) {
-		              int temp1 = i;
-		              int temp2 = j;
-		              for (int k = 0; k < 2; k++) {
-		                 try {
-		                      if (PlayBoard.playBoard[temp1][temp2] == Main.ComC) {
-		                            myCount++;
-		                            try {
-		                               if (myCount == 2) {
-		                                   //011011(up)
-		                                   if ((temp1 + 5 <= 18 && temp1 - 5 >= 0) && PlayBoard.playBoard[temp1 + 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 + 5][temp2 - 5] == 0 && PlayBoard.playBoard[temp1 + 3][temp2 - 3] == Main.ComC && PlayBoard.playBoard[temp1 + 4][temp2 - 4] == Main.ComC) {
-		                                       superWeight[temp1 + 2][temp2 - 2] += 40; add++;
-		                                       superWeight[temp1 + 5][temp2 - 5] += 40; add++;
-		                                    }
-		                                   //101011(up)
-		                                    else if ((temp1 + 5 <= 18 && temp1 - 5 >= 0) && PlayBoard.playBoard[temp1 + 4][temp2 - 4] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 + 3][temp2 - 3] == Main.ComC && PlayBoard.playBoard[temp1 + 5][temp2 - 5] == Main.ComC) {
-		                                          superWeight[temp1 + 2][temp2 - 2] += 40; add++;
-		                                          superWeight[temp1 + 4][temp2 - 4] += 40; add++;
-		                                    }
-		                                   //110011(up)
-		                                    else if ((temp1 + 5 <= 18 && temp1 - 5 >= 0) && PlayBoard.playBoard[temp1 + 3][temp2 - 3] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 + 4][temp2 - 4] == Main.ComC && PlayBoard.playBoard[temp1 + 5][temp2 - 5] == Main.ComC) {
-		                                          superWeight[temp1 + 2][temp2 - 2] += 40; add++;
-		                                          superWeight[temp1 + 3][temp2 - 3] += 40; add++;
-		                                    }
-		                                   //101101(mid)
-		                                    else if ((temp1 - 2 >= 0 && temp2 + 2 <= 18) && (temp1 + 3 <= 18 && temp2 - 3 >= 0) && PlayBoard.playBoard[temp1 + 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 + 2] == Main.ComC && PlayBoard.playBoard[temp1 + 3][temp2 - 3] == Main.ComC) {
-		                                          superWeight[temp1 + 2][temp2 - 2] += 40; add++;
-		                                          superWeight[temp1 - 1][temp2 + 1] += 40; add++;
-		                                    }
-		                                   //011011(mid)
-			                            	   else if ((temp1 - 3 >= 0 && temp2 + 3 <= 18) && (temp1 + 2 <= 18 && temp2 - 2 >= 0) && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 + 2] == Main.ComC && PlayBoard.playBoard[temp1 - 3][temp2 + 3] == Main.ComC) {
-			                                       superWeight[temp1 - 1][temp2 + 1] += 40; add++;
-			                                       superWeight[temp1 + 2][temp2 - 2] += 40; add++;
-			                               } 
-		                                   //110110(mid)
-			                            	   else if ((temp1 - 4 >= 0 && temp2 + 4 <= 18) && (temp1 + 1 <= 18 && temp2 - 1 >= 0) && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 + 3][temp2 - 3] == Main.ComC && PlayBoard.playBoard[temp1 + 4][temp2 - 4] == Main.ComC) {
-			                                       superWeight[temp1 - 1][temp2 + 1] += 40; add++;
-			                                       superWeight[temp1 + 2][temp2 - 2] += 40; add++;
+		//좌대각 시작점 ----------------------------------------------------------------------
+
+		     
+		     
+		     if(add >= 2) return;
+		  // 5 왼쪽 위에서 오른쪽 아래(좌대각\) 공격 
+		     for (int i = 0; i < 19; i++) {
+		        myCount = 0;
+		        for (int j = 0; j < 19; j++) {
+		           int temp1 = i;
+		           int temp2 = j;
+		           for (int k = 0; k < 5; k++) {
+		           	try {
+		               if (PlayBoard.playBoard[temp1][temp2] == Main.UserC) {
+		                 myCount++;
+		                    if (myCount == 5) {
+		                   	if((temp1 - 5 < 0 || temp2 - 5 < 0) && PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0) {
+									superWeight[temp1 + 1][temp2 + 1] += 40; add++;
+								}else if((temp1 + 1 > 18 || temp2 + 1 > 18) && PlayBoard.playBoard[temp1 - 5][temp2 - 5] == 0){
+									superWeight[temp1 - 5][temp2 - 5] += 40; add++;
+								}else if ((temp1 - 5 < 0 || temp2 - 5 < 0) && PlayBoard.playBoard[temp1 - 5][temp2 - 5] == 0) {
+		                       	superWeight[temp1 - 5][temp2 - 5] += 80; add++;
+		                       }else if ((temp1 + 1 > 18 || temp2 + 1 > 18) && PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0) {
+		                       	superWeight[temp1 + 1][temp2 + 1] += 80; add++;
+		                       } 
+		                    }
+		                 temp1++;
+		                 temp2++;
+		              } else myCount = 0;
+		              } catch (ArrayIndexOutOfBoundsException e) {}
+		           }
+		        }
+		     }
+		     
+		     
+		     
+		     if(add >= 2) return;
+		     // 4 왼쪽 위에서 오른쪽 아래(좌대각\) 공격
+		     for (int i = 0; i < 19; i++) {
+		        myCount = 0;
+		        for (int j = 0; j < 19; j++) {
+		           int temp1 = i;
+		           int temp2 = j;
+		           for (int k = 0; k < 4; k++) {
+		           	try {
+			                if (PlayBoard.playBoard[temp1][temp2] == Main.UserC) {
+			                  myCount++;
+			                     if (myCount == 4) {
+			                    	 if((temp1 - 4 <= 0 || temp2 - 4 <= 0) && (temp1 + 2 <= 18 && temp2 +2 <= 18) && PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 + 2] == 0) {
+										superWeight[temp1 + 1][temp2 + 1] += 40; add++;
+										superWeight[temp1 + 2][temp2 + 2] += 40; add++;
+									}else if((temp1 + 1 >= 18 || temp2 + 1 >= 18) && (temp1 - 5 >= 0 && temp2 - 5 >= 0) && PlayBoard.playBoard[temp1 - 5][temp2 - 5] == 0 && PlayBoard.playBoard[temp1 - 4][temp2 - 4] == 0){
+										superWeight[temp1 - 5][temp2 - 5] += 40; add++;
+										superWeight[temp1 - 4][temp2 - 4] += 40; add++;
+									}else if ((temp1 -4 > 0 && temp2 -4 > 0) && (temp1 + 1 < 19 && temp2 + 1 < 19) && PlayBoard.playBoard[temp1 - 4][temp2 - 4] == 0 && PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0) {
+			                        	superWeight[temp1 - 4][temp2 - 4] += 80; add++;
+			                        	superWeight[temp1 + 1][temp2 + 1] += 80; add++;
+			                        } else if ((temp1 - 5 >= 0 && temp2 - 5 >= 0) && (PlayBoard.playBoard[temp1 - 4][temp2 - 4] == 0 && PlayBoard.playBoard[temp1 - 5][temp2 - 5] == 0)) {
+		                       	   	superWeight[temp1 - 4][temp2 - 4] += 80; add++;
+		                       	   	superWeight[temp1 - 5][temp2 - 5] += 80; add++;
+		                          } else if ((temp1 + 2 <= 18 && temp2 +2 <= 18) && (PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0&& PlayBoard.playBoard[temp1 + 2][temp2 + 2] == 0)) {
+		                       	    superWeight[temp1 + 1][temp2 + 1] += 80; add++;
+		                       	    superWeight[temp1 + 2][temp2 + 2] += 80; add++;
+		                          }
+			                     }
+			                  temp1++;
+			                  temp2++;
+			               } else myCount = 0;
+		              } catch (ArrayIndexOutOfBoundsException e) {}
+		           }
+		        }
+		     }
+		     
+
+			   if(add >= 2) return;
+			   // 3(좌대각\) 1공백 공격
+			   for(int i = 0;i<19;i++){
+			      myCount = 0;
+			      for (int j = 0; j < 19; j++) {
+			         int temp1 = i;
+			         int temp2 = j;
+			         for (int k = 0; k < 3; k++) {
+			        	 try {
+				             if (PlayBoard.playBoard[temp1][temp2] == Main.UserC) {
+				               myCount++;
+				                  if (myCount == 3) {
+				                    if ((temp1 + 3 <= 18 && temp2 + 3 <= 18) && PlayBoard.playBoard[temp1 + 1][temp2+ 1] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 + 2] == Main.UserC && PlayBoard.playBoard[temp1 + 3][temp2+ 3] == 0) {
+										superWeight[temp1 + 1][temp2+ 1] += 40; add++;
+				                    	superWeight[temp1 + 3][temp2+ 3] += 40; add++;
+				                    	
+					                 }else if ((temp1 - 5 >= 0 && temp2 - 5 >= 0) && PlayBoard.playBoard[temp1 - 3][temp2- 3] == 0 && PlayBoard.playBoard[temp1 - 4][temp2- 4] == Main.UserC && PlayBoard.playBoard[temp1 - 5][temp2- 5] == 0) {
+					                	superWeight[temp1 - 5][temp2 - 5] += 40; add++;
+				                    	superWeight[temp1 - 3][temp2 - 3] += 40; add++;
+					                 }
+					               temp1++;
+					               temp2++;
+				                  } else myCount = 0;
+				             }
+			            } catch (ArrayIndexOutOfBoundsException e) {}
+			           }
+			         
+			      }
+			   }
+			   
+			   
+			   if(add >= 2) return;
+			   // 3(좌대각\) 2공백 1 공격
+			   for(int i = 0;i<19;i++){
+			      myCount = 0;
+			      for (int j = 0; j < 19; j++) {
+			         int temp1 = i;
+			         int temp2 = j;
+			         for (int k = 0; k < 3; k++) {
+			        	try {
+				            if (PlayBoard.playBoard[temp1][temp2] == Main.UserC) {
+				               myCount++;
+				               if (myCount == 3) {
+				                    if ((temp1 + 3 <= 18 && temp2 + 3 <= 18) && PlayBoard.playBoard[temp1 + 1][temp2+ 1] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 + 2] == 0 && PlayBoard.playBoard[temp1 + 3][temp2+ 3] == Main.UserC) {
+										superWeight[temp1 + 1][temp2+ 1] += 40; add++;
+				                    	superWeight[temp1 + 2][temp2+ 2] += 40; add++;
+				                    	
+					                 }else if ((temp1 - 5 >= 0 && temp2 - 5 >= 0) && PlayBoard.playBoard[temp1 - 3][temp2- 3] == 0 && PlayBoard.playBoard[temp1 - 4][temp2- 4] == 0 && PlayBoard.playBoard[temp1 - 5][temp2- 5] == Main.UserC) {
+					                	superWeight[temp1 - 4][temp2 - 4] += 40; add++;
+				                    	superWeight[temp1 - 3][temp2 - 3] += 40; add++;
+					                 }
+					               temp1++;
+					               temp2++;
+				                  } else myCount = 0;
+				            	}
+			        	 }catch (ArrayIndexOutOfBoundsException e) {}
+			         }
+			      }
+			   }
+			   
+
+			   if(add >= 2) return;
+			      // 2 (공백2) 2 공격 (좌대각\)왼쪽 위에서 오른쪽 아래
+			      for (int i = 0; i < 19; i++) {
+			          myCount = 0;
+			          for (int j = 0; j < 19; j++) {
+			             int temp1 = i;
+			              int temp2 = j;
+			              for (int k = 0; k < 2; k++) {
+			                 try {
+			                      if (PlayBoard.playBoard[temp1][temp2] == Main.UserC) {
+			                            myCount++;
+			                            try {
+			                               if (myCount == 2) {
+			                            	   //101011(up)
+			                                   if ((temp1 - 5 >= 0 && temp2 - 5 >= 0 )&& PlayBoard.playBoard[temp1 - 4][temp2 - 4] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 - 3][temp2 - 3] == Main.UserC && PlayBoard.playBoard[temp1 - 5][temp2 - 5] == Main.UserC) {
+			                                          superWeight[temp1 - 4][temp2 - 4] += 40; add++;
+			                                          superWeight[temp1 - 2][temp2 - 2] += 40; add++;
+			                                    }
+			                                   //110011(up)
+			                                    else if ((temp1 - 5 >= 0 && temp2 - 5 >= 0 )&& PlayBoard.playBoard[temp1 - 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 - 3][temp2 - 3] == 0 && PlayBoard.playBoard[temp1 - 4][temp2 - 4] == Main.UserC && PlayBoard.playBoard[temp1 - 5][temp2 - 5] == Main.UserC) {
+			                                          superWeight[temp1 - 2][temp2 - 2] += 40; add++;
+			                                          superWeight[temp1 - 3][temp2 - 3] += 40; add++;
+			                                    }
+			                                   //011011(up)
+			                                    else if ((temp1 - 5 >= 0 && temp2 - 5 >= 0 )&& PlayBoard.playBoard[temp1 - 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 - 5][temp2 - 5] == 0 && PlayBoard.playBoard[temp1 - 4][temp2 - 4] == Main.UserC && PlayBoard.playBoard[temp1 - 3][temp2 - 3] == Main.UserC) {
+			                                          superWeight[temp1 - 2][temp2 - 2] += 40; add++;
+			                                          superWeight[temp1 - 5][temp2 - 5] += 40; add++;
+			                                    }
+			                                   //110110(mid)
+			                                    else if ((temp1 - 4 >= 0 && temp2 - 4 >= 0 && temp1 + 1 <= 18 && temp2 + 1 <= 18) && PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 - 3][temp2 - 3] == Main.UserC && PlayBoard.playBoard[temp1 - 4][temp2 - 4] == Main.UserC) {
+			                                       superWeight[temp1 + 1][temp2 + 1] += 40; add++;
+			                                       superWeight[temp1 - 2][temp2 - 2] += 40; add++;
+			                                    }
+			                                   //011011(mid)
+			                                    else if ((temp1 - 2 >= 0 && temp2 - 2 >= 0 && temp1 + 3 <= 18 && temp2 + 3 <= 18) && PlayBoard.playBoard[temp1 - 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 + 2] == Main.UserC && PlayBoard.playBoard[temp1 + 3][temp2 + 3] == Main.UserC) {
+			                                          superWeight[temp1 - 2][temp2 - 2] += 40; add++;
+			                                          superWeight[temp1 + 1][temp2 + 1] += 40; add++;
+			                                    }
+			                                   //110110(mid)
+			                                    else if ((temp1 - 4 >= 0 && temp2 - 4 >= 0 && temp1 + 1 <= 18 && temp2 + 1 <= 18) && PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 - 3][temp2 - 3] == Main.UserC && PlayBoard.playBoard[temp1 - 4][temp2 - 4] == Main.UserC) {
+			                                       superWeight[temp1 + 1][temp2 + 1] += 40; add++;
+			                                       superWeight[temp1 - 2][temp2 - 2] += 40; add++;
+			                                   }
+			                                   //110110(down)
+				                                   else if ((temp1- 4 <= 18 && temp2 - 4 <= 18) && PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 + 4][temp2 + 4] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 + 2] == Main.UserC && PlayBoard.playBoard[temp1 + 3][temp2 + 3] == Main.UserC) {
+				                                       superWeight[temp1 + 1][temp2 + 1] += 40; add++;
+				                                       superWeight[temp1 + 4][temp2 + 4] += 40; add++;
+				                               }
+			                                   //110011(down)
+			                                    else if ((temp1- 4 <= 18 && temp2 - 4 <= 18) && PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 + 2] == 0 && PlayBoard.playBoard[temp1 + 3][temp2 + 3] == Main.UserC && PlayBoard.playBoard[temp1 + 4][temp2 + 4] == Main.UserC) {
+			                                          superWeight[temp1 + 1][temp2 + 1] += 40; add++;
+			                                          superWeight[temp1 + 2][temp2 + 2] += 40; add++;
+			                                   }
+			                                   //110101(down)
+			                                    else if ((temp1- 4 <= 18 && temp2 - 4 <= 18) && PlayBoard.playBoard[temp1 + 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 + 4][temp2 + 4] == 0 && PlayBoard.playBoard[temp1 + 3][temp2 + 3] == Main.UserC && PlayBoard.playBoard[temp1 + 2][temp2 + 2] == Main.UserC) {
+			                                          superWeight[temp1 + 1][temp2 + 1] += 40; add++;
+			                                          superWeight[temp1 + 4][temp2 + 4] += 40; add++;
+			                                   }
 			                               }
-		                                   //110011(down)
-		                                    else if ((temp1 - 4 >= 0 && temp1 +4 <= 18) && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 + 2] == 0 && PlayBoard.playBoard[temp1 - 3][temp2 + 3] == Main.ComC && PlayBoard.playBoard[temp1 - 4][temp2 + 4] == Main.ComC) {
-		                                          superWeight[temp1 - 1][temp2 + 1] += 40; add++;
-		                                          superWeight[temp1 - 2][temp2 + 2] += 40; add++;
-		                                    }
-		                                   //110101(down)
-		                                    else if ((temp1 - 4 >= 0 && temp1 +4 <= 18) && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 - 3][temp2 + 3] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 + 2] == Main.ComC && PlayBoard.playBoard[temp1 - 4][temp2 + 4] == Main.ComC) {
-		                                          superWeight[temp1 - 1][temp2 + 1] += 40; add++;
-		                                          superWeight[temp1 - 3][temp2 + 3] += 40; add++;
-		                                    }
-		                                   //110110(down)
-		                                    else if ((temp1 - 4 >= 0 && temp1 +4 <= 18) && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 - 4][temp2 + 4] == 0 && PlayBoard.playBoard[temp1 - 3][temp2 + 3] == Main.ComC && PlayBoard.playBoard[temp1 - 2][temp2 + 2] == Main.ComC) {
-		                                          superWeight[temp1 - 1][temp2 + 1] += 40; add++;
-		                                          superWeight[temp1 - 4][temp2 + 4] += 40; add++;
-		                                    }
-		                               }
-		                            } catch (ArrayIndexOutOfBoundsException e) {}
-		                            temp1--;
-		                            temp2++;
-		                         } else myCount = 0;
-		                 }
-		                 catch(ArrayIndexOutOfBoundsException e) {}
-		              }
-		              }
-		          }
-		    
-		    //한방오리백숙 ==========================================
-				
-		    //====================================================================
+			                            } catch (ArrayIndexOutOfBoundsException e) {}
+			                            temp1++;
+			                            temp2++;
+			                         } else myCount = 0;
+			                 }
+			                 catch(ArrayIndexOutOfBoundsException e) {}
+			              }
+			              }
+			          }
+			      
+			      
+			      //우대각 시작점 -----------------------------------------------------------------------------------------
+			       
+		 if(add >= 2) return;
+		 // 5 오른쪽위에서 왼쪽아래 (우대각/) 공격 
+		     for (int j = 0; j < 19; j++) {
+		        myCount = 0;
+		        for (int i = 0; i < 19; i++) {
+		           int temp1 = i;
+		           int temp2 = j;
+		           for (int k = 0; k < 5; k++) {
+		           	try {
+		           	if (PlayBoard.playBoard[temp1][temp2] == Main.UserC) {
+		           		myCount++;
+		                    if (myCount == 5) {
+		                   	 //우상단 막히고 좌하단 뚫림
+		                   	if((temp1 + 5 > 18 || temp2 - 5 < 0) && (temp1 - 1 >= 0 || temp2 + 1 <= 18) && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0) {
+									superWeight[temp1 - 1][temp2 + 1] += 40; add++;
+								}
+		                   	//좌하단 막히고 우상단 뚫림
+								else if((temp1 - 1 < 0 || temp2 + 1 > 18) && (temp1 + 5 <= 18 && temp2 - 5 >= 0) && PlayBoard.playBoard[temp1 + 5][temp2 - 5] == 0){
+									superWeight[temp1 + 5][temp2 - 5] += 40; add++;
+								}
+		                   	//우상단 자리있음
+								else if ((temp1 + 5 <= 18 && temp2 - 5 >= 0) && PlayBoard.playBoard[temp1 + 5][temp2 - 5] == 0) {
+		                       	superWeight[temp1 + 5][temp2 - 5] += 80;  add++;
+		                       } 
+		                   	//좌하단 자리있음
+								else if ((temp1 - 1 >= 0 || temp2 + 1 <= 18) && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0) {
+		                       	superWeight[temp1 - 1][temp2 + 1] += 80; add++;
+		                       }
+		                    }
+		                    temp1--;
+		                    temp2++;
+		               } else myCount = 0;
+		              } catch (ArrayIndexOutOfBoundsException e) {}
+		           }
+		        }
+		     }
+		     
+		     
+		     
+		     if(add >= 2) return;
+		     // 4 오른쪽위에서 왼쪽아래 (우대각/) 공격
+		     for (int j = 0; j < 19; j++) {
+		        myCount = 0;
+		        for (int i = 0; i < 19; i++) {
+		           int temp1 = i;
+		           int temp2 = j;
+		           for (int k = 0; k < 4; k++) {
+		           	try {
+			                if (PlayBoard.playBoard[temp1][temp2] == Main.UserC) {
+			                  myCount++;
+			                     if (myCount == 4) {
+			                    	 //우상단 막히고 좌하단에 두개
+			                    	 if((temp1 + 4 > 18 || temp2 - 4 < 0) && (temp1 - 2 >= 0 && temp2 + 2 <= 18) && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 + 2] == 0) {
+										superWeight[temp1 - 1][temp2 + 1] += 40; add++;
+										superWeight[temp1 - 2][temp2 + 2] += 40; add++;
+									//촤하단 막히고 우상단에 두개
+									}else if((temp1 + 1 > 18 || temp2 - 1 < 0) && (temp1 + 5 >= 0 && temp2 - 5 >= 0) && PlayBoard.playBoard[temp1 + 5][temp2 - 5] == 0 && PlayBoard.playBoard[temp1 + 4][temp2 - 4] == 0){
+										superWeight[temp1 + 5][temp2 - 5] += 40; add++;
+										superWeight[temp1 + 4][temp2 - 4] += 40; add++;
+									//우상단 좌하단에 하나씩 뚫림 
+									}else if ((temp1 + 4 <= 18 && temp2 - 4 >= 0) && (temp1 - 1 >= 0 && temp2 + 1 <= 18) && PlayBoard.playBoard[temp1 + 4][temp2 - 4] == 0 && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0) {
+			                        	superWeight[temp1 + 4][temp2 - 4] += 80; add++;
+			                        	superWeight[temp1 - 1][temp2 + 1] += 80; add++;
+			                        //우상단에 두개
+			                        } else if ((temp1 + 5 >= 0 && temp2 - 5 >= 0) && PlayBoard.playBoard[temp1 + 5][temp2 - 5] == 0 && PlayBoard.playBoard[temp1 + 4][temp2 - 4] == 0) {
+			                        	superWeight[temp1 + 5][temp2 - 5] += 40; add++;
+										superWeight[temp1 + 4][temp2 - 4] += 40; add++;
+		                       	//좌하단에 두개
+		                          } else if ((temp1 - 2 >= 0 && temp2 +2 <= 18) && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 + 2] == 0) {
+		                       	    superWeight[temp1 - 1][temp2 + 1] += 40; add++;
+										superWeight[temp1 - 2][temp2 + 2] += 40; add++;
+		                          }
+			                     }
+			                  temp1--;
+			                  temp2++;
+			               } else myCount = 0;
+		              } catch (ArrayIndexOutOfBoundsException e) {}
+		           }
+		        }
+		     }
+
+			      
+		     
+		     
+		     if(add >= 2) return;
+		     // 3(우대각/) 1공백 공격
+			   for(int j = 0; j < 19; j++){
+			      myCount = 0;
+			      for (int i = 0;i<19;i++) {
+			         int temp1 = i;
+			         int temp2 = j;
+			         for (int k = 0; k < 3; k++) {
+			        	 try {
+				             if (PlayBoard.playBoard[temp1][temp2] == Main.UserC) {
+				               myCount++;
+				                  if (myCount == 3) {
+				                    if ((temp1 - 3 >= 0 && temp2 + 3 <= 18) && PlayBoard.playBoard[temp1 - 1][temp2+ 1] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 + 2] == Main.UserC && PlayBoard.playBoard[temp1 - 3][temp2+ 3] == 0) {
+				                    	superWeight[temp1 - 1][temp2+ 1] += 40; add++;
+				                    	superWeight[temp1 - 3][temp2+ 3] += 40; add++;
+				                    	
+					                 }else if ((temp1 + 5 <= 18 && temp2 - 5 >= 0) && PlayBoard.playBoard[temp1 + 3][temp2- 3] == 0 && PlayBoard.playBoard[temp1 + 4][temp2- 4] == Main.UserC && PlayBoard.playBoard[temp1 + 5][temp2- 5] == 0) {
+					                	superWeight[temp1 + 5][temp2 - 5] += 40; add++;
+				                    	superWeight[temp1 + 3][temp2 - 3] += 40; add++;
+					                 }
+					               temp1--;
+					               temp2++;
+				                  } else myCount = 0;
+				             }
+			            } catch (ArrayIndexOutOfBoundsException e) {}
+			           }
+			         
+			      }
+			   }
+			   
+			    
+			   if(add >= 2) return;
+			   // 3(우대각/) 2공백 1 공격
+			   for(int j = 0; j < 19; j++){
+			      myCount = 0;
+			      for (int i = 0;i<19;i++) {
+			         int temp1 = i;
+			         int temp2 = j;
+			         for (int k = 0; k < 3; k++) {
+			        	try {
+				            if (PlayBoard.playBoard[temp1][temp2] == Main.UserC) {
+				               myCount++;
+				               if (myCount == 3) {
+				                    if ((temp1 - 3 >= 0 && temp2 + 3 <= 18) && PlayBoard.playBoard[temp1 - 1][temp2+ 1] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 + 2] == 0 && PlayBoard.playBoard[temp1 - 3][temp2+ 3] == Main.UserC) {
+										superWeight[temp1 - 1][temp2+ 1] += 40; add++;
+				                    	superWeight[temp1 - 2][temp2+ 2] += 40; add++;
+				                    	
+					                 }else if ((temp1 + 5 <= 18 && temp2 - 5 >= 0) && PlayBoard.playBoard[temp1 + 3][temp2- 3] == 0 && PlayBoard.playBoard[temp1 + 4][temp2- 4] == 0 && PlayBoard.playBoard[temp1 + 5][temp2- 5] == Main.UserC) {
+					                	superWeight[temp1 + 4][temp2 - 4] += 40; add++;
+				                    	superWeight[temp1 + 3][temp2 - 3] += 40; add++;
+					                 }
+					               temp1--;
+					               temp2++;
+				                  } else myCount = 0;
+				            	}
+			        	 }catch (ArrayIndexOutOfBoundsException e) {}
+			         }
+			      }
+			   }
+			   
+			   
+			   
+			 
+			  
+			   if(add >= 2) return;
+			      // 2 (공백2) 2 공격 (우대각/)오른쪽 위에서 왼쪽 아래 
+			      for (int i = 0; i < 19; i++) {
+			          myCount = 0;
+			          for (int j = 0; j < 19; j++) {
+			              int temp1 = i;
+			              int temp2 = j;
+			              for (int k = 0; k < 2; k++) {
+			                 try {
+			                      if (PlayBoard.playBoard[temp1][temp2] == Main.UserC) {
+			                            myCount++;
+			                            try {
+			                               if (myCount == 2) {
+			                                   //011011(up)
+			                                   if ((temp1 + 5 <= 18 && temp1 - 5 >= 0) && PlayBoard.playBoard[temp1 + 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 + 5][temp2 - 5] == 0 && PlayBoard.playBoard[temp1 + 3][temp2 - 3] == Main.UserC && PlayBoard.playBoard[temp1 + 4][temp2 - 4] == Main.UserC) {
+			                                       superWeight[temp1 + 2][temp2 - 2] += 40; add++;
+			                                       superWeight[temp1 + 5][temp2 - 5] += 40; add++;
+			                                    }
+			                                   //101011(up)
+			                                    else if ((temp1 + 5 <= 18 && temp1 - 5 >= 0) && PlayBoard.playBoard[temp1 + 4][temp2 - 4] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 + 3][temp2 - 3] == Main.UserC && PlayBoard.playBoard[temp1 + 5][temp2 - 5] == Main.UserC) {
+			                                          superWeight[temp1 + 2][temp2 - 2] += 40; add++;
+			                                          superWeight[temp1 + 4][temp2 - 4] += 40; add++;
+			                                    }
+			                                   //110011(up)
+			                                    else if ((temp1 + 5 <= 18 && temp1 - 5 >= 0) && PlayBoard.playBoard[temp1 + 3][temp2 - 3] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 + 4][temp2 - 4] == Main.UserC && PlayBoard.playBoard[temp1 + 5][temp2 - 5] == Main.UserC) {
+			                                          superWeight[temp1 + 2][temp2 - 2] += 40; add++;
+			                                          superWeight[temp1 + 3][temp2 - 3] += 40; add++;
+			                                    }
+			                                   //101101(mid)
+			                                    else if ((temp1 - 2 >= 0 && temp2 + 2 <= 18) && (temp1 + 3 <= 18 && temp2 - 3 >= 0) && PlayBoard.playBoard[temp1 + 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 + 2] == Main.UserC && PlayBoard.playBoard[temp1 + 3][temp2 - 3] == Main.UserC) {
+			                                          superWeight[temp1 + 2][temp2 - 2] += 40; add++;
+			                                          superWeight[temp1 - 1][temp2 + 1] += 40; add++;
+			                                    }
+			                                   //011011(mid)
+				                            	   else if ((temp1 - 3 >= 0 && temp2 + 3 <= 18) && (temp1 + 2 <= 18 && temp2 - 2 >= 0) && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 + 2] == Main.UserC && PlayBoard.playBoard[temp1 - 3][temp2 + 3] == Main.UserC) {
+				                                       superWeight[temp1 - 1][temp2 + 1] += 40; add++;
+				                                       superWeight[temp1 + 2][temp2 - 2] += 40; add++;
+				                               } 
+			                                   //110110(mid)
+				                            	   else if ((temp1 - 4 >= 0 && temp2 + 4 <= 18) && (temp1 + 1 <= 18 && temp2 - 1 >= 0) && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 + 2][temp2 - 2] == 0 && PlayBoard.playBoard[temp1 + 3][temp2 - 3] == Main.UserC && PlayBoard.playBoard[temp1 + 4][temp2 - 4] == Main.UserC) {
+				                                       superWeight[temp1 - 1][temp2 + 1] += 40; add++;
+				                                       superWeight[temp1 + 2][temp2 - 2] += 40; add++;
+				                               }
+			                                   //110011(down)
+			                                    else if ((temp1 - 4 >= 0 && temp1 +4 <= 18) && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 + 2] == 0 && PlayBoard.playBoard[temp1 - 3][temp2 + 3] == Main.UserC && PlayBoard.playBoard[temp1 - 4][temp2 + 4] == Main.UserC) {
+			                                          superWeight[temp1 - 1][temp2 + 1] += 40; add++;
+			                                          superWeight[temp1 - 2][temp2 + 2] += 40; add++;
+			                                    }
+			                                   //110101(down)
+			                                    else if ((temp1 - 4 >= 0 && temp1 +4 <= 18) && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 - 3][temp2 + 3] == 0 && PlayBoard.playBoard[temp1 - 2][temp2 + 2] == Main.UserC && PlayBoard.playBoard[temp1 - 4][temp2 + 4] == Main.UserC) {
+			                                          superWeight[temp1 - 1][temp2 + 1] += 40; add++;
+			                                          superWeight[temp1 - 3][temp2 + 3] += 40; add++;
+			                                    }
+			                                   //110110(down)
+			                                    else if ((temp1 - 4 >= 0 && temp1 +4 <= 18) && PlayBoard.playBoard[temp1 - 1][temp2 + 1] == 0 && PlayBoard.playBoard[temp1 - 4][temp2 + 4] == 0 && PlayBoard.playBoard[temp1 - 3][temp2 + 3] == Main.UserC && PlayBoard.playBoard[temp1 - 2][temp2 + 2] == Main.UserC) {
+			                                          superWeight[temp1 - 1][temp2 + 1] += 40; add++;
+			                                          superWeight[temp1 - 4][temp2 + 4] += 40; add++;
+			                                    }
+			                               }
+			                            } catch (ArrayIndexOutOfBoundsException e) {}
+			                            temp1--;
+			                            temp2++;
+			                         } else myCount = 0;
+			                 }
+			                 catch(ArrayIndexOutOfBoundsException e) {}
+			              }
+			              }
+			          }
+			    
+			    //한방오리백숙 ==========================================
+					
+			    //====================================================================
 
 	   
 	   
